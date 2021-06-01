@@ -8,6 +8,7 @@
     @include push--auto;
     margin-top: 2rem;
     display: flex;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
     font-size: 3rem;
@@ -15,7 +16,7 @@
 
   &__slider {
     display: flex;
-    gap: 2rem;
+    gap: inherit;
   }
 
   &__item {

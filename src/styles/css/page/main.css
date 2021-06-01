@@ -96,13 +96,14 @@ h6 {
   margin-right: auto;
   margin-top: 2rem;
   display: flex;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
 }
 .sites__slider {
   display: flex;
-  gap: 2rem;
+  gap: inherit;
 }
 .sites__item {
   width: 4rem;
@@ -113,6 +114,100 @@ h6 {
 .sites__controls {
   color: #fff;
   cursor: pointer;
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35rem;
+  height: 35rem;
+}
+.navigation__quarter {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border: 2px solid #dad4d4;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.navigation__quarter:hover {
+  background: #474242;
+}
+.navigation__quarter--top__left {
+  top: 0;
+  left: 0;
+  background: #343131;
+  border-radius: 100% 0 0 0;
+}
+.navigation__quarter--top__left:hover {
+  top: -3%;
+  left: -3%;
+}
+.navigation__quarter--top__right {
+  top: 0;
+  right: 0;
+  background: #343131;
+  border-radius: 0 100% 0 0;
+}
+.navigation__quarter--top__right:hover {
+  top: -3%;
+  right: -3%;
+}
+.navigation__quarter--bottom__right {
+  bottom: 0;
+  right: 0;
+  background: #343131;
+  border-radius: 0 0 100% 0;
+}
+.navigation__quarter--bottom__right:hover {
+  bottom: -3%;
+  right: -3%;
+}
+.navigation__quarter--bottom__left {
+  bottom: 0;
+  left: 0;
+  background: #343131;
+  border-radius: 0 0 0 100%;
+}
+.navigation__quarter--bottom__left:hover {
+  bottom: -3%;
+  left: -3%;
+}
+.navigation__cutout {
+  width: 60%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background: linear-gradient(45deg, #8371cd, #ffffff);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.navigation__icon {
+  font-size: 3em;
+  position: absolute;
+}
+.navigation__icon--cog {
+  top: 35%;
+  left: 35%;
+}
+.navigation__icon--bookmark {
+  top: 35%;
+  right: 35%;
+}
+.navigation__icon--plus {
+  bottom: 35%;
+  right: 35%;
+}
+.navigation__icon--palette {
+  bottom: 35%;
+  left: 35%;
 }
 
 body {

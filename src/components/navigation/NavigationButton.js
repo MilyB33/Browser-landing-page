@@ -1,8 +1,8 @@
 import React from 'react';
 import { GiHamburgerMenu as HamburgerIcon } from 'react-icons/all';
-const NavigationButton = () => {
+const NavigationButton = ({ onToggle }) => {
   return (
-    <button className="btn__navigation">
+    <button className="btn__navigation" onClick={onToggle}>
       <HamburgerIcon />
     </button>
   );

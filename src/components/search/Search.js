@@ -10,7 +10,7 @@ import {
 
 import NavigationButton from '../navigation/NavigationButton';
 
-const Search = () => {
+const Search = ({ onToggle }) => {
   return (
     <main className="search">
       <div className="socials">
@@ -41,7 +41,7 @@ const Search = () => {
         </button> */}
       </form>
 
-      <NavigationButton />
+      <NavigationButton onToggle={onToggle} />
     </main>
   );
 };

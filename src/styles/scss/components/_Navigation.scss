@@ -1,0 +1,108 @@
+@use '../abstracts/' as *;
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35rem;
+  height: 35rem;
+
+  &__quarter {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 2px solid $clr-light-200;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background: $clr-dark-200;
+    }
+
+    &--top__left {
+      top: 0;
+      left: 0;
+      background: $clr-dark-100;
+      border-radius: 100% 0 0 0;
+
+      &:hover {
+        top: -3%;
+        left: -3%;
+      }
+    }
+
+    &--top__right {
+      top: 0;
+      right: 0;
+      background: $clr-dark-100;
+      border-radius: 0 100% 0 0;
+
+      &:hover {
+        top: -3%;
+        right: -3%;
+      }
+    }
+
+    &--bottom__right {
+      bottom: 0;
+      right: 0;
+      background: $clr-dark-100;
+      border-radius: 0 0 100% 0;
+
+      &:hover {
+        bottom: -3%;
+        right: -3%;
+      }
+    }
+
+    &--bottom__left {
+      bottom: 0;
+      left: 0;
+      background: $clr-dark-100;
+      border-radius: 0 0 0 100%;
+
+      &:hover {
+        bottom: -3%;
+        left: -3%;
+      }
+    }
+  }
+
+  &__cutout {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    background: linear-gradient(45deg, #8371cd, #ffffff);
+    @include center;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    font-size: 3em;
+    position: absolute;
+
+    &--cog {
+      top: 35%;
+      left: 35%;
+    }
+
+    &--bookmark {
+      top: 35%;
+      right: 35%;
+    }
+
+    &--plus {
+      bottom: 35%;
+      right: 35%;
+    }
+
+    &--palette {
+      bottom: 35%;
+      left: 35%;
+    }
+  }
+}
