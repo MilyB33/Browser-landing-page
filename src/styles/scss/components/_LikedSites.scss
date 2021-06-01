@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.sites {
+  grid-row: 4/5;
+  grid-column: 2/3;
+
+  &__container {
+    @include push--auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__item {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid $clr-light-100;
+    border-radius: 15px;
+  }
+
+  &__controls {
+    color: $clr-light-100;
+    cursor: pointer;
+  }
+}

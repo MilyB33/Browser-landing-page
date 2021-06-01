@@ -6,6 +6,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-primary;
+  color: $clr-light-100;
 }
 
 input,
@@ -15,6 +17,11 @@ button {
   border: none;
   outline: none;
   background: none;
+  color: $clr-light-100;
+}
+
+input::placeholder {
+  color: $clr-light-100;
 }
 
 ul {
@@ -24,4 +31,13 @@ ul {
 a {
   text-decoration: none;
   color: $clr-light-100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
 }
