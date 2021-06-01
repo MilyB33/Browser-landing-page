@@ -1,5 +1,4 @@
-@use "../abstracts" as *;
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 *,
 *::after,
 *::before {
@@ -23,5 +22,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: $clr-light-100;
+  color: #fff;
 }
+
+/*# sourceMappingURL=main.css.map */
