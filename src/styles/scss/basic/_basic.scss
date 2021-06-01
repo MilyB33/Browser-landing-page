@@ -18,6 +18,10 @@ button {
   outline: none;
   background: none;
   color: $clr-light-100;
+
+  &:focus {
+    box-shadow: 0 0 8px 8px $clr-light-200;
+  }
 }
 
 input::placeholder {

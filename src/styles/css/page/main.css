@@ -18,6 +18,12 @@ button {
   background: none;
   color: #fff;
 }
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  box-shadow: 0 0 8px 8px #dad4d4;
+}
 
 input::placeholder {
   color: #fff;
@@ -179,9 +185,11 @@ h6 {
   width: 60%;
   height: 60%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
+  gap: 1rem;
+  font-size: 3rem;
   background: linear-gradient(45deg, #8371cd, #ffffff);
   position: absolute;
   top: 50%;
@@ -208,6 +216,11 @@ h6 {
 .navigation__icon--palette {
   bottom: 35%;
   left: 35%;
+}
+.navigation__logo {
+  max-width: 10rem;
+  max-height: 10rem;
+  cursor: pointer;
 }
 
 body {

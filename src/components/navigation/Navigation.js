@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  AiFillCloseCircle as CloseIcon,
   FaCog as CogIcon,
   BsBookmarks as BookmarkIcon,
   AiOutlinePlusCircle as PlusIcon,
   BiPalette as PaletteIcon,
 } from 'react-icons/all';
 import NavigationQuarter from './NavigationQuarter';
+import logo from '../../static/images/gas-mask.png';
 
 const Navigation = ({ onToggle }) => {
   return (
@@ -28,7 +28,13 @@ const Navigation = ({ onToggle }) => {
         icon={<PaletteIcon className="navigation__icon navigation__icon--palette" />}
       />
       <div className="navigation__cutout">
-        <CloseIcon style={{ cursor: 'pointer' }} onClick={onToggle} />
+        <img
+          src={logo}
+          alt="gas mask image"
+          className="navigation__logo"
+          onClick={onToggle}
+          title="Click to close Menu"
+        />
       </div>
     </nav>
   );

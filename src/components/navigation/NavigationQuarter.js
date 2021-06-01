@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NavigationQuarter = ({ additionalClass, icon }) => {
-  return <div className={`navigation__quarter navigation__quarter${additionalClass}`}>{icon}</div>;
+  return (
+    <button className={`navigation__quarter navigation__quarter${additionalClass}`}>{icon}</button>
+  );
 };
 
 NavigationQuarter.propTypes = {
