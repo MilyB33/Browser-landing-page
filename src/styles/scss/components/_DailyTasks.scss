@@ -1,0 +1,62 @@
+@use '../abstracts/' as *;
+
+.daily__tasks {
+  grid-column: 3/4;
+  grid-row: 1/3;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+}
+
+.tasks__controls {
+  margin: 1rem 0;
+  border: 2px solid $clr-light-100;
+
+  &__group {
+    border-bottom: 2px solid $clr-light-100;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.input__task__title,
+.input__task__time {
+  padding: 0.2rem;
+}
+
+.input__task__title {
+  width: 75%;
+  font-size: 1.3rem;
+}
+
+.input__task__time {
+  width: 20%;
+  text-align: center;
+}
+
+// it's for clock icon in some browsers
+.input__task__time::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.input__task__submit {
+  font-size: 1.5rem;
+  margin-left: auto;
+  line-height: 0;
+}
+
+.input__task__content {
+  width: 100%;
+  padding: 0.2rem;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.task {
+  border: 2px solid $clr-light-100;
+  padding: 0.8rem;
+  margin: 0.5rem;
+
+  &__content {
+    font-size: 0.9rem;
+  }
+}
