@@ -4,6 +4,7 @@
 @use '../components/LikedSites';
 @use '../components/Navigation';
 @use '../components/DailyTasks';
+@use '../components/Premieres';
 
 body {
   background: linear-gradient(45deg, #e855e9 10%, #7e89c1, #00d4ff);
@@ -16,4 +17,9 @@ body {
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: repeat(4, 1fr);
   gap: 2rem;
+}
+
+.container--functionality {
+  padding: 1rem 2rem;
+  overflow-y: auto;
 }

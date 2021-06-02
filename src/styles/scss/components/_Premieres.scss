@@ -1,0 +1,40 @@
+@use '../abstracts/' as *;
+
+.premieres {
+  grid-column: 3/4;
+  grid-row: 3/5;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+
+  &__controls {
+    margin: 1rem 0;
+    border: 2px solid $clr-light-100;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.input__movie__title {
+  width: 95%;
+  font-size: 1.3rem;
+  padding: 0.3rem;
+}
+
+.input__movie__submit {
+  line-height: 0;
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+
+.premiere {
+  display: flex;
+  align-items: center;
+  border: 2px solid $clr-light-100;
+  padding: 0.8rem;
+  margin: 0.5rem;
+}
+
+.btn__premiere__delete {
+  font-size: 1.3rem;
+  margin-left: auto;
+}

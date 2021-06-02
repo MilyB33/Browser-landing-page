@@ -5,7 +5,7 @@ import TasksForm from './TasksForm';
 const DailyTasks = () => {
   return (
     <div className="daily__tasks">
-      <h1 className="header header">Your Daily Tasks :</h1>
+      <h1 className="header">Your Daily Tasks :</h1>
       <TasksForm />
       <Tasks />
     </div>
