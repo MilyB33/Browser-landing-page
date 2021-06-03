@@ -359,6 +359,25 @@ h6 {
   color: #343131;
 }
 
+.time__weather {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.header__time {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.actual__date,
+.actual__weather {
+  font-size: 2rem;
+  line-height: 0;
+  margin: 0 1rem;
+}
+
 body {
   background: linear-gradient(45deg, #e855e9 10%, #7e89c1, #00d4ff);
 }

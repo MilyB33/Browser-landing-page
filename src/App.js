@@ -7,6 +7,8 @@ import DailyTasks from './components/tasks/DailyTasks';
 import MovieSeries from './components/movies/MoviesSeries';
 import Notes from './components/notes/Notes';
 import Crypto from './components/crypto/Crypto';
+import TimeWeather from './components/time/TimeWeather';
+
 function App() {
   const [showNav, setShowNav] = useState(false);
 
@@ -22,7 +24,7 @@ function App() {
       <MovieSeries />
       <Notes />
       <Crypto />
-
+      <TimeWeather />
       {showNav && <Navigation onToggle={toggleNav} />}
     </div>
   );
