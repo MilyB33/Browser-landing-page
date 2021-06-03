@@ -5,7 +5,7 @@ import LikedSites from './components/likedSites/LikedSites';
 import Navigation from './components/navigation/Navigation';
 import DailyTasks from './components/tasks/DailyTasks';
 import MovieSeries from './components/movies/MoviesSeries';
-
+import Notes from './components/notes/Notes';
 function App() {
   const [showNav, setShowNav] = useState(false);
 
@@ -19,6 +19,7 @@ function App() {
       <LikedSites />
       <DailyTasks />
       <MovieSeries />
+      <Notes />
       {showNav && <Navigation onToggle={toggleNav} />}
     </div>
   );
