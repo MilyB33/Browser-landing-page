@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.crypto {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__select,
+  &__price {
+    @include push--auto;
+    font-size: 1.3rem;
+  }
+
+  &__select {
+    border-bottom: 2px solid $clr-light-100;
+  }
+
+  &__option {
+    color: $clr-dark-100;
+  }
+}

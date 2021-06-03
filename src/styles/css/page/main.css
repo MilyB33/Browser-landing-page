@@ -340,6 +340,25 @@ h6 {
   text-align: justify;
 }
 
+.crypto {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.crypto__select, .crypto__price {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.3rem;
+}
+.crypto__select {
+  border-bottom: 2px solid #fff;
+}
+.crypto__option {
+  color: #343131;
+}
+
 body {
   background: linear-gradient(45deg, #e855e9 10%, #7e89c1, #00d4ff);
 }

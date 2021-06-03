@@ -6,6 +6,7 @@ import Navigation from './components/navigation/Navigation';
 import DailyTasks from './components/tasks/DailyTasks';
 import MovieSeries from './components/movies/MoviesSeries';
 import Notes from './components/notes/Notes';
+import Crypto from './components/crypto/Crypto';
 function App() {
   const [showNav, setShowNav] = useState(false);
 
@@ -20,6 +21,8 @@ function App() {
       <DailyTasks />
       <MovieSeries />
       <Notes />
+      <Crypto />
+
       {showNav && <Navigation onToggle={toggleNav} />}
     </div>
   );
