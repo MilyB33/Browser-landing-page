@@ -30,8 +30,9 @@ const Search = ({ onToggle }) => {
           <GmailIcon />
         </a>
       </div>
-      <form action="https://www.google.pl" className="search__form">
+      <form method="GET" action="https://www.google.pl/search" className="search__form">
         <input
+          name="q"
           type="text"
           placeholder="What's up doc? What are you looking for?"
           className="search__bar"
