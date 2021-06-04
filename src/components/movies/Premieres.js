@@ -1,28 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Premiere from './Premiere';
+import SeriesContext from '../../context/Series/seriesContext';
 
 const Premieres = () => {
-  const [movies, setMovies] = useState([
-    {
-      id: 0,
-      title: 'Rick and Morty',
-      date: '12/12/2021',
-    },
-    {
-      id: 1,
-      title: 'Rick and Morty',
-      date: '12/12/2021',
-    },
-    {
-      id: 2,
-      title: 'Rick and Morty',
-      date: '12/12/2021',
-    },
-  ]);
+  const seriesContext = useContext(SeriesContext);
+  const { series, getSeries } = seriesContext;
+  useEffect(() => {
+    getSeries();
+    console.log(series);
+  }, []);
   return (
     <ul className="container">
-      {movies.map((movie) => (
-        <Premiere key={movie.id} movie={movie} />
+      {series.map((TvShow) => (
+        <Premiere key={TvShow.id} TvShow={TvShow} />
       ))}
     </ul>
   );

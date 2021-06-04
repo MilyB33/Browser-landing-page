@@ -1,13 +1,16 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { FiDelete as DeleteIcon } from 'react-icons/all';
-const Premiere = ({ movie: { title, date } }) => {
+import SeriesContext from '../../context/Series/seriesContext';
+const Premiere = ({ TvShow: { id, name, airDate } }) => {
+  const seriesContext = useContext(SeriesContext);
+
   return (
     <Fragment>
       <li className="premiere">
         <h3 className="premiere__info">
-          {title} {date}
+          {name} {airDate}
         </h3>
-        <button className="btn__premiere__delete">
+        <button className="btn__premiere__delete" onClick={() => seriesContext.removeSeries(id)}>
           <DeleteIcon />
         </button>
       </li>
