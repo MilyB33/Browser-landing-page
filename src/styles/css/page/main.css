@@ -378,6 +378,47 @@ h6 {
   margin: 0 1rem;
 }
 
+.subMenus {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  text-align: center;
+  background: #9fa0ff;
+  font-size: 1rem;
+  overflow-y: auto;
+}
+.subMenus__controls {
+  margin-top: 1rem;
+  line-height: 0;
+}
+.subMenus__icon {
+  margin: 0 1rem;
+  font-size: 3rem;
+}
+
+.options__form {
+  overflow-y: auto;
+  max-height: 70%;
+}
+
+.options__form::-webkit-scrollbar {
+  display: none;
+}
+
+.option__group {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.option__input {
+  margin-left: auto;
+}
+
 body {
   background: linear-gradient(45deg, #e855e9 10%, #7e89c1, #00d4ff);
 }
