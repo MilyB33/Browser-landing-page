@@ -449,4 +449,11 @@ body {
   overflow-y: auto;
 }
 
+.spinner {
+  width: 5rem;
+  height: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*# sourceMappingURL=main.css.map */

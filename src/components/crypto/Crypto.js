@@ -1,9 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import CryptoContext from '../../context/Cryptocurrency/cryptoContext';
+import Spinner from '../layout/Spinner';
 
 const Cypto = () => {
   const cryptoContext = useContext(CryptoContext);
-  const { coins, getCoins, getActualCoin, actualCoin } = cryptoContext;
+  const { coins, getCoins, getActualCoin, actualCoin, loading } = cryptoContext;
+
   // Need to be local state because can't pass object to option value
   const [price, setPrice] = useState('');
 
@@ -19,6 +21,13 @@ const Cypto = () => {
   const onChange = (e) => {
     getActualCoin(e.target.value);
   };
+
+  if (loading)
+    return (
+      <section className="crypto">
+        <Spinner />
+      </section>
+    );
 
   return (
     <section className="crypto">

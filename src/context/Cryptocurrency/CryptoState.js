@@ -39,6 +39,7 @@ const CryptoState = (props) => {
       value={{
         coins: state.coins,
         actualCoin: state.actualCoin,
+        loading: state.loading,
         getCoins,
         getActualCoin,
       }}
