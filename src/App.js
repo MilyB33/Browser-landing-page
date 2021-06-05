@@ -10,6 +10,7 @@ import Crypto from './components/crypto/Crypto';
 import TimeWeather from './components/time/TimeWeather';
 import SeriesState from './context/Series/SeriesState';
 import TasksState from './context/Tasks/TasksState';
+import CryptoState from './context/Cryptocurrency/CryptoState';
 
 function App() {
   const [showNav, setShowNav] = useState(false);
@@ -21,16 +22,18 @@ function App() {
   return (
     <SeriesState>
       <TasksState>
-        <div className="container__main">
-          <Search onToggle={toggleNav} />
-          <LikedSites />
-          <DailyTasks />
-          <MovieSeries />
-          <Notes />
-          <Crypto />
-          <TimeWeather />
-          {showNav && <Navigation onToggle={toggleNav} />}
-        </div>
+        <CryptoState>
+          <div className="container__main">
+            <Search onToggle={toggleNav} />
+            <LikedSites />
+            <DailyTasks />
+            <MovieSeries />
+            <Notes />
+            <Crypto />
+            <TimeWeather />
+            {showNav && <Navigation onToggle={toggleNav} />}
+          </div>
+        </CryptoState>
       </TasksState>
     </SeriesState>
   );
