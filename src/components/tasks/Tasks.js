@@ -1,27 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Task from './Task';
 
+import TasksContext from '../../context/Tasks/tasksContext';
+
 const Tasks = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: 0,
-      title: 'Title',
-      time: '12:00',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    },
-    {
-      id: 1,
-      title: 'Title',
-      time: '12:00',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    },
-    {
-      id: 2,
-      title: 'Title',
-      time: '12:00',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    },
-  ]);
+  const tasksContext = useContext(TasksContext);
+  const { tasks, getTasks } = tasksContext;
+
+  useEffect(() => {
+    getTasks();
+  }, []);
 
   return (
     <ul className="container">

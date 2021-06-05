@@ -234,14 +234,26 @@ h6 {
   overflow-y: auto;
 }
 
-.tasks__controls {
+.tasks__form {
   margin: 1rem 0;
   border: 2px solid #fff;
 }
-.tasks__controls__group {
+.tasks__form__group {
   border-bottom: 2px solid #fff;
   display: flex;
   align-items: center;
+}
+
+.task__info {
+  position: relative;
+}
+
+.task__controls {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  right: 5%;
+  top: 5%;
 }
 
 .input__task__title,

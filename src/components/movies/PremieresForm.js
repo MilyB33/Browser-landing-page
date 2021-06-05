@@ -5,8 +5,14 @@ const PremieresForm = () => {
   const seriesContext = useContext(SeriesContext);
 
   const [text, setText] = useState('');
+
+  const onSubmit = (e) => {
+    seriesContext.addSeries(e, text);
+    setText('');
+  };
+
   return (
-    <form className="premieres__controls" onSubmit={(e) => seriesContext.addSeries(e, text)}>
+    <form className="premieres__controls" onSubmit={onSubmit}>
       <input
         type="text"
         placeholder="Search movie/series..."
