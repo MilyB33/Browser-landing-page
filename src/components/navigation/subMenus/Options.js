@@ -1,9 +1,9 @@
 import React from 'react';
 import SubMenus from './SubMenus';
 import Option from './Option';
-const Options = ({ onToggleOptions }) => {
+const Options = () => {
   return (
-    <SubMenus onToggleOptions={onToggleOptions}>
+    <SubMenus>
       <Option text="Toggle Notes" type="checkbox" name="notes"></Option>
       <Option text="Toggle Crypto" type="checkbox" name="crypto"></Option>
       <Option text="Toggle Daily Tasks" type="checkbox" name="tasks"></Option>

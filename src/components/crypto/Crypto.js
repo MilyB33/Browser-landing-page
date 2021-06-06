@@ -11,6 +11,7 @@ const Cypto = () => {
 
   useEffect(() => {
     getCoins();
+    // eslint-disable-next-line
   }, []);
 
   // setting price after request (when actual Coin is setted)

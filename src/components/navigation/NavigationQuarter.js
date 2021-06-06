@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavigationQuarter = ({ additionalClass, icon, onToggleOptions, optionType }) => {
+const NavigationQuarter = ({ children, additionalClass, icon, onToggle }) => {
   return (
     <button
-      onClick={() => onToggleOptions(optionType)}
+      onClick={onToggle}
       className={`navigation__quarter navigation__quarter${additionalClass}`}
     >
-      {icon}
+      {children}
     </button>
   );
 };

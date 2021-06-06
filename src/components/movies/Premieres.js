@@ -8,6 +8,7 @@ const Premieres = () => {
 
   useEffect(() => {
     getSeries();
+    // eslint-disable-next-line
   }, []);
 
   return (

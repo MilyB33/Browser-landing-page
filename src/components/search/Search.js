@@ -5,12 +5,12 @@ import {
   AiFillGithub as GithubIcon,
   RiNetflixFill as NetflixIcon,
   SiGmail as GmailIcon,
-  AiOutlineSearch as SearchIcon,
+  // AiOutlineSearch as SearchIcon,
 } from 'react-icons/all';
 
 import NavigationButton from '../navigation/NavigationButton';
 
-const Search = ({ onToggle }) => {
+const Search = () => {
   return (
     <main className="search">
       <div className="socials">
@@ -42,7 +42,7 @@ const Search = ({ onToggle }) => {
         </button> */}
       </form>
 
-      <NavigationButton onToggle={onToggle} />
+      <NavigationButton />
     </main>
   );
 };

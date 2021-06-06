@@ -1,69 +1,67 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import {
   FaCog as CogIcon,
   BsBookmarks as BookmarkIcon,
   AiOutlinePlusCircle as PlusIcon,
   BiPalette as PaletteIcon,
 } from 'react-icons/all';
+
 import NavigationQuarter from './NavigationQuarter';
 import Options from './subMenus/Options';
 import Colors from './subMenus/Colors';
+import Bookmarks from './subMenus/Bookmarks';
+import Add from './subMenus/Add';
+
 import logo from '../../static/images/gas-mask.png';
 
-const Navigation = ({ onToggle }) => {
-  const [showOption, setShowOption] = useState({
-    showDefault: true,
-    showOptions: false,
-    showColors: false,
-  });
+import NavigationContext from '../../context/navigation/navigationContext';
 
-  const { showDefault, showOptions, showColors } = showOption;
+const Navigation = () => {
+  const navigationContext = useContext(NavigationContext);
 
-  const toggleOptions = (option) => {
-    console.log(option);
-    const newShowOption = {};
-    for (const x in showOption) {
-      if (x === option) newShowOption[x] = true;
-      else newShowOption[x] = false;
-    }
+  const {
+    toggleNav,
+    toggleOptions,
+    toggleColors,
+    toggleBookmarks,
+    toggleAdd,
+    showDefault,
+    showOptions,
+    showColors,
+    showBookmarks,
+    showAdd,
+  } = navigationContext;
 
-    setShowOption(newShowOption);
-  };
   return (
     <nav className="navigation">
-      <NavigationQuarter
-        additionalClass="--top__left"
-        icon={<CogIcon className="navigation__icon navigation__icon--cog" />}
-        onToggleOptions={toggleOptions}
-        optionType="showOptions"
-      />
-      <NavigationQuarter
-        additionalClass="--top__right"
-        icon={<BookmarkIcon className="navigation__icon navigation__icon--bookmark" />}
-      />
-      <NavigationQuarter
-        additionalClass="--bottom__right"
-        icon={<PlusIcon className="navigation__icon navigation__icon--plus" />}
-      />
-      <NavigationQuarter
-        additionalClass="--bottom__left"
-        icon={<PaletteIcon className="navigation__icon navigation__icon--palette" />}
-        onToggleOptions={toggleOptions}
-        optionType="showColors"
-      />
+      <NavigationQuarter additionalClass="--top__left" onToggle={toggleOptions}>
+        <CogIcon className="navigation__icon navigation__icon--cog" />
+      </NavigationQuarter>
+      <NavigationQuarter additionalClass="--top__right" onToggle={toggleBookmarks}>
+        <BookmarkIcon className="navigation__icon navigation__icon--bookmark" />
+      </NavigationQuarter>
+      <NavigationQuarter additionalClass="--bottom__right" onToggle={toggleAdd}>
+        <PlusIcon className="navigation__icon navigation__icon--plus" />
+      </NavigationQuarter>
+      <NavigationQuarter additionalClass="--bottom__left" onToggle={toggleColors}>
+        <PaletteIcon className="navigation__icon navigation__icon--palette" />
+      </NavigationQuarter>
+
       <div className="navigation__cutout">
         {showDefault && (
           <img
             src={logo}
-            alt="gas mask image"
+            alt="gas mask"
             className="navigation__logo"
-            onClick={onToggle}
+            onClick={toggleNav}
             title="Click to close Menu"
           />
         )}
 
-        {showOptions && <Options onToggleOptions={toggleOptions}></Options>}
-        {showColors && <Colors onToggleOptions={toggleOptions}></Colors>}
+        {showOptions && <Options />}
+        {showColors && <Colors />}
+        {showBookmarks && <Bookmarks />}
+        {showAdd && <Add />}
       </div>
     </nav>
   );
