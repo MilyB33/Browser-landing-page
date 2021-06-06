@@ -8,6 +8,11 @@ import {
   TOGGLE_COLORS,
   TOGGLE_BOOKMARKS,
   TOGGLE_ADD,
+  TOGGLE_TASKS,
+  TOGGLE_TVSHOWS,
+  TOGGLE_SITES,
+  TOGGLE_NOTES,
+  TOGGLE_CRYPTO,
 } from '../types';
 
 const NavigationState = (props) => {
@@ -18,13 +23,17 @@ const NavigationState = (props) => {
     showColors: false,
     showBookmarks: false,
     showAdd: false,
+    showTasks: true,
+    showTvShows: true,
+    showSites: true,
+    showNotes: true,
+    showCrypto: true,
   };
 
-  const toggleNav = () => {
-    dispatch({
-      type: TOGGLE_NAV,
-    });
-  };
+  const [state, dispatch] = useReducer(NavigationReducer, initialState);
+
+  // Function for control the changing navigation window
+  const toggleNav = () => dispatch({ type: TOGGLE_NAV });
 
   const toggleDefault = () => dispatch({ type: TOGGLE_DEFAULT });
 
@@ -36,7 +45,17 @@ const NavigationState = (props) => {
 
   const toggleAdd = () => dispatch({ type: TOGGLE_ADD });
 
-  const [state, dispatch] = useReducer(NavigationReducer, initialState);
+  // Functionality visibility functions
+
+  const toggleTasks = () => dispatch({ type: TOGGLE_TASKS });
+
+  const toggleTvShows = () => dispatch({ type: TOGGLE_TVSHOWS });
+
+  const toggleSites = () => dispatch({ type: TOGGLE_SITES });
+
+  const toggleNotes = () => dispatch({ type: TOGGLE_NOTES });
+
+  const toggleCrypto = () => dispatch({ type: TOGGLE_CRYPTO });
 
   return (
     <NavigationContext.Provider
@@ -47,12 +66,22 @@ const NavigationState = (props) => {
         showColors: state.showColors,
         showBookmarks: state.showBookmarks,
         showAdd: state.showAdd,
+        showTasks: state.showTasks,
+        showTvShows: state.showTvShows,
+        showSites: state.showSites,
+        showNotes: state.showNotes,
+        showCrypto: state.showCrypto,
         toggleNav,
         toggleOptions,
         toggleDefault,
         toggleColors,
         toggleBookmarks,
         toggleAdd,
+        toggleTasks,
+        toggleTvShows,
+        toggleSites,
+        toggleCrypto,
+        toggleNotes,
       }}
     >
       {props.children}

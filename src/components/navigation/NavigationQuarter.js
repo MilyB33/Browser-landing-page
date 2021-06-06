@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavigationQuarter = ({ children, additionalClass, icon, onToggle }) => {
+const NavigationQuarter = ({ children, additionalClass, onToggle }) => {
   return (
     <button
       onClick={onToggle}
@@ -14,6 +14,5 @@ const NavigationQuarter = ({ children, additionalClass, icon, onToggle }) => {
 
 NavigationQuarter.propTypes = {
   additionalClass: PropTypes.string.isRequired,
-  icon: PropTypes.element.isRequired,
 };
 export default NavigationQuarter;

@@ -5,6 +5,11 @@ import {
   TOGGLE_COLORS,
   TOGGLE_BOOKMARKS,
   TOGGLE_ADD,
+  TOGGLE_TASKS,
+  TOGGLE_TVSHOWS,
+  TOGGLE_SITES,
+  TOGGLE_NOTES,
+  TOGGLE_CRYPTO,
 } from '../types';
 
 export default (state, action) => {
@@ -60,6 +65,31 @@ export default (state, action) => {
         showColors: false,
         showBookmarks: false,
         showAdd: true,
+      };
+    case TOGGLE_TASKS:
+      return {
+        ...state,
+        showTasks: !state.showTasks,
+      };
+    case TOGGLE_TVSHOWS:
+      return {
+        ...state,
+        showTvShows: !state.showTvShows,
+      };
+    case TOGGLE_SITES:
+      return {
+        ...state,
+        showSites: !state.showSites,
+      };
+    case TOGGLE_NOTES:
+      return {
+        ...state,
+        showNotes: !state.showNotes,
+      };
+    case TOGGLE_CRYPTO:
+      return {
+        ...state,
+        showCrypto: !state.showCrypto,
       };
     default:
       return state;

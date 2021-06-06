@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import Search from '../search/Search';
 import LikedSites from '../likedSites/LikedSites';
 import Navigation from '../navigation/Navigation';
@@ -13,18 +13,18 @@ import NavigationContext from '../../context/navigation/navigationContext';
 const Home = () => {
   const navigationContext = useContext(NavigationContext);
 
-  const { showNav } = navigationContext;
+  const { showNav, showTasks, showTvShows, showNotes, showSites, showCrypto } = navigationContext;
 
   return (
     <Fragment>
       <div className="container__main">
         <Search />
-        <LikedSites />
-        <DailyTasks />
-        <MovieSeries />
-        <Notes />
-        <Crypto />
         <TimeWeather />
+        {showSites && <LikedSites />}
+        {showTasks && <DailyTasks />}
+        {showTvShows && <MovieSeries />}
+        {showNotes && <Notes />}
+        {showCrypto && <Crypto />}
         {showNav && <Navigation />}
       </div>
     </Fragment>
