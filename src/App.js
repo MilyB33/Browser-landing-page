@@ -4,6 +4,7 @@ import SeriesState from './context/Series/SeriesState';
 import TasksState from './context/Tasks/TasksState';
 import CryptoState from './context/Cryptocurrency/CryptoState';
 import NavigationState from './context/navigation/NavigationState';
+import NotesState from './context/notes/notesState';
 import Home from './components/layout/Home';
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       <SeriesState>
         <TasksState>
           <CryptoState>
-            <Home />
+            <NotesState>
+              <Home />
+            </NotesState>
           </CryptoState>
         </TasksState>
       </SeriesState>

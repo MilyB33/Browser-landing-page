@@ -5,14 +5,51 @@
   grid-row: 1/4;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 2rem;
   padding: 1rem 3rem;
+  overflow: auto;
+}
+
+.btn--delete__note {
+  font-size: inherit;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.btn--add__note {
+  font-size: 2rem;
+  @include push--auto;
 }
 
 .note__title {
   margin-bottom: 0.5rem;
+  position: relative;
 }
 
 .note__content {
   text-align: justify;
+}
+
+.note__modify__form {
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
+
+.note__modify__title {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.note__modify__content {
+  font-size: 1rem;
+  resize: none;
+}
+
+.btn--save__note {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  background-color: rgba($clr-additional-200, 0.3);
+  box-shadow: 2px 2px 8px black;
 }

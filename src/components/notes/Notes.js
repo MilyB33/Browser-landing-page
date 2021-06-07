@@ -1,30 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { IoMdAddCircle as AddIcon } from 'react-icons/all';
 import Note from './Note';
 
+import NotesContext from '../../context/notes/notesContext';
+
 const Notes = () => {
-  const [notes, setNotes] = useState([
-    {
-      id: 0,
-      title: 'First Note',
-      content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum illum delectus sed nemo totam soluta tempore pariatur itaque vel accusamus adipisci saepe nam eveniet debitis esse, architecto voluptate ex enim?',
-    },
-    {
-      id: 1,
-      title: 'Second Note',
-      content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum illum delectus sed nemo totam soluta tempore pariatur itaque vel accusamus adipisci saepe nam eveniet debitis esse, architecto voluptate ex enim?',
-    },
-    {
-      id: 2,
-      title: 'Third Note',
-      content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum illum delectus sed nemo totam soluta tempore pariatur itaque vel accusamus adipisci saepe nam eveniet debitis esse, architecto voluptate ex enim?',
-    },
-  ]);
+  const notesContext = useContext(NotesContext);
+  const { getNotes, addNote, notes } = notesContext;
+
+  useEffect(() => {
+    getNotes();
+    // esling-disable-next-line
+  }, []);
   return (
     <section className="notes">
       <h1>My Notes :</h1>
+      <button className="btn btn--add__note" onClick={addNote}>
+        <AddIcon />
+      </button>
+
       {notes.map((note) => (
         <Note key={note.id} note={note} />
       ))}

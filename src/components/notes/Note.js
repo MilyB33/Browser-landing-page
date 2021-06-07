@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
-const Note = ({ note: { id, title, content } }) => {
-  const onDoubleClick = (id) => {
-    console.log(id);
-  };
+import NoteEditForm from './NoteEditForm';
+import NoteInfo from './NoteInfo';
+
+const Note = ({ note: { id, title, content, edit } }) => {
   return (
-    <div className="note" onDoubleClick={() => onDoubleClick(id)}>
-      <h2 className="note__title">{title}</h2>
-      <p className="note__content">{content}</p>
-    </div>
+    <Fragment>
+      {edit ? (
+        <NoteEditForm id={id} title={title} content={content} />
+      ) : (
+        <NoteInfo id={id} title={title} content={content} />
+      )}
+    </Fragment>
   );
+};
+
+Note.propTypes = {
+  note: PropTypes.object.isRequired,
 };
 
 export default Note;
