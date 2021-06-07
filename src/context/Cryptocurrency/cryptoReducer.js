@@ -1,5 +1,5 @@
 import { ACTUAL_COIN, GET_COINS } from '../types';
-
+// eslint-disable-next-line
 export default (state, action) => {
   switch (action.type) {
     case GET_COINS:

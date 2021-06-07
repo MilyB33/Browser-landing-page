@@ -10,7 +10,7 @@ const Notes = () => {
 
   useEffect(() => {
     getNotes();
-    // esling-disable-next-line
+    // eslint-disable-next-line
   }, []);
   return (
     <section className="notes">
