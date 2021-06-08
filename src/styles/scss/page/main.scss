@@ -29,7 +29,5 @@ body {
 }
 
 .spinner {
-  width: 5rem;
-  height: 5rem;
   @include push--auto;
 }

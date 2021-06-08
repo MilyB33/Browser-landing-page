@@ -10,6 +10,8 @@ import {
   TOGGLE_SITES,
   TOGGLE_NOTES,
   TOGGLE_CRYPTO,
+  ADD_BOOKMARK,
+  REMOVE_BOOKMARK,
 } from '../types';
 
 export default (state, action) => {
@@ -90,6 +92,16 @@ export default (state, action) => {
       return {
         ...state,
         showCrypto: !state.showCrypto,
+      };
+    case ADD_BOOKMARK:
+      return {
+        ...state,
+        bookmarks: [...state.bookmarks, action.payload],
+      };
+    case REMOVE_BOOKMARK:
+      return {
+        ...state,
+        bookmarks: state.bookmarks.filter((bookmark) => bookmark.id !== action.payload),
       };
     default:
       return state;

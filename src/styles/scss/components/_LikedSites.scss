@@ -17,13 +17,22 @@
   &__slider {
     display: flex;
     gap: inherit;
+    min-width: 25rem;
   }
 
   &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 4rem;
     height: 4rem;
     border: 2px solid $clr-light-100;
     border-radius: 15px;
+  }
+
+  &__icon {
+    width: 50%;
+    height: 50%;
   }
 
   &__controls {

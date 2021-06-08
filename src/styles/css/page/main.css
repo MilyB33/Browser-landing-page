@@ -114,12 +114,20 @@ h6 {
 .sites__slider {
   display: flex;
   gap: inherit;
+  min-width: 25rem;
 }
 .sites__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 4rem;
   height: 4rem;
   border: 2px solid #fff;
   border-radius: 15px;
+}
+.sites__icon {
+  width: 50%;
+  height: 50%;
 }
 .sites__controls {
   color: #fff;
@@ -345,6 +353,11 @@ h6 {
   overflow: auto;
 }
 
+.note {
+  padding: 1rem 0;
+  border-top: 1px dotted #fff;
+}
+
 .btn--delete__note {
   font-size: inherit;
   position: absolute;
@@ -371,6 +384,8 @@ h6 {
   text-align: justify;
   display: flex;
   flex-direction: column;
+  padding: 1rem 0;
+  border-top: 1px dotted #fff;
 }
 
 .note__modify__title {
@@ -385,10 +400,13 @@ h6 {
 }
 
 .btn--save__note {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 0.5rem;
-  font-size: 1.5rem;
-  background-color: rgba(24, 90, 219, 0.3);
-  box-shadow: 2px 2px 8px black;
+  background-color: rgba(24, 90, 219, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 0 0;
+  box-shadow: 3px 3px 1px black;
 }
 
 .crypto {
@@ -448,6 +466,9 @@ h6 {
 }
 
 .options__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow-y: auto;
   max-height: 70%;
 }
@@ -470,6 +491,30 @@ h6 {
   margin-left: auto;
 }
 
+.bookmarks__input {
+  width: 80%;
+  border-bottom: 2px solid #fff;
+}
+
+.bookmarks__submit {
+  margin: 1rem;
+  width: 80%;
+  border: 2px solid #fff;
+}
+
+.bookmark {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.bookmark__remove {
+  margin-right: auto;
+  font-size: 1rem;
+  line-height: 0;
+}
+
 body {
   background: linear-gradient(45deg, #e855e9 10%, #7e89c1, #00d4ff);
 }
@@ -489,8 +534,6 @@ body {
 }
 
 .spinner {
-  width: 5rem;
-  height: 5rem;
   margin-left: auto;
   margin-right: auto;
 }

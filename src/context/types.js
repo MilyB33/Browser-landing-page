@@ -22,3 +22,5 @@ export const ADD_NOTE = 'ADD_NOTE';
 export const UPDATE_NOTE = 'UPDATE_NOTE';
 export const TOGGLE_EDIT = 'TOGGLE_EDIT';
 export const REMOVE_NOTE = 'REMOVE_NOTE';
+export const ADD_BOOKMARK = 'ADD_BOOKMARK';
+export const REMOVE_BOOKMARK = 'REMOVE_BOOKMARK';

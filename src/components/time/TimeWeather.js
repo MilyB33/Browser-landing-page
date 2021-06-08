@@ -35,7 +35,6 @@ const TimeWeather = () => {
           }
         );
         const data = await res.json();
-        console.log(data);
         setActualTemperature({ temp: data.dataseries[0].temp2m.max, loading: false });
       },
       (err) => {

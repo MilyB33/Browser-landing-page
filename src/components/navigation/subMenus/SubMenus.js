@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import OptionsContainer from './OptionsContainer';
 import { TiArrowBack as GoBackIcon, IoIosCloseCircleOutline as CloseIcon } from 'react-icons/all';
 
 import NavigationContext from '../../../context/navigation/navigationContext';
 
-const SubMenus = ({ children }) => {
+const SubMenus = ({ onSubmit, children }) => {
   const navigationContext = useContext(NavigationContext);
 
   const { toggleDefault, toggleNav } = navigationContext;
@@ -19,7 +18,9 @@ const SubMenus = ({ children }) => {
           <CloseIcon className="subMenus__icon" />
         </button>
       </div>
-      <OptionsContainer>{children}</OptionsContainer>
+      <form className="options__form" onSubmit={onSubmit}>
+        {children}
+      </form>
     </div>
   );
 };

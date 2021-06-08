@@ -10,6 +10,11 @@
   overflow: auto;
 }
 
+.note {
+  padding: 1rem 0;
+  border-top: 1px dotted $clr-light-100;
+}
+
 .btn--delete__note {
   font-size: inherit;
   position: absolute;
@@ -35,6 +40,8 @@
   text-align: justify;
   display: flex;
   flex-direction: column;
+  padding: 1rem 0;
+  border-top: 1px dotted $clr-light-100;
 }
 
 .note__modify__title {
@@ -49,8 +56,10 @@
 }
 
 .btn--save__note {
+  @include push--auto;
   margin-top: 0.5rem;
-  font-size: 1.5rem;
-  background-color: rgba($clr-additional-200, 0.3);
-  box-shadow: 2px 2px 8px black;
+  background-color: rgba($clr-additional-200, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 0 0;
+  box-shadow: 3px 3px 1px black;
 }

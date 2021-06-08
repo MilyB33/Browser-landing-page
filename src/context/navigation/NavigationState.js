@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import NavigationContext from './navigationContext';
 import NavigationReducer from './navigationReducer';
 import {
@@ -13,6 +14,8 @@ import {
   TOGGLE_SITES,
   TOGGLE_NOTES,
   TOGGLE_CRYPTO,
+  ADD_BOOKMARK,
+  REMOVE_BOOKMARK,
 } from '../types';
 
 const NavigationState = (props) => {
@@ -28,6 +31,7 @@ const NavigationState = (props) => {
     showSites: true,
     showNotes: true,
     showCrypto: true,
+    bookmarks: [],
   };
 
   const [state, dispatch] = useReducer(NavigationReducer, initialState);
@@ -57,6 +61,22 @@ const NavigationState = (props) => {
 
   const toggleCrypto = () => dispatch({ type: TOGGLE_CRYPTO });
 
+  // Bookmarks
+
+  const addBookmark = (url, name) => {
+    dispatch({
+      type: ADD_BOOKMARK,
+      payload: {
+        id: uuidv4(),
+        name,
+        url,
+        icon: `${url}/favicon.ico`,
+      },
+    });
+  };
+
+  const removeBookmark = (id) => dispatch({ type: REMOVE_BOOKMARK, payload: id });
+
   return (
     <NavigationContext.Provider
       value={{
@@ -71,6 +91,7 @@ const NavigationState = (props) => {
         showSites: state.showSites,
         showNotes: state.showNotes,
         showCrypto: state.showCrypto,
+        bookmarks: state.bookmarks,
         toggleNav,
         toggleOptions,
         toggleDefault,
@@ -82,6 +103,8 @@ const NavigationState = (props) => {
         toggleSites,
         toggleCrypto,
         toggleNotes,
+        addBookmark,
+        removeBookmark,
       }}
     >
       {props.children}
