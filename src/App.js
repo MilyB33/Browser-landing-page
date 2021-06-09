@@ -1,5 +1,7 @@
 import React from 'react';
 import './styles/css/page/main.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import SeriesState from './context/Series/SeriesState';
 import TasksState from './context/Tasks/TasksState';
 import CryptoState from './context/Cryptocurrency/CryptoState';

@@ -102,36 +102,21 @@ h6 {
   grid-column: 2/3;
 }
 .sites__container {
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 2rem;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
   font-size: 3rem;
 }
 .sites__slider {
-  display: flex;
-  gap: inherit;
-  min-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20rem;
 }
 .sites__item {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  width: 4rem;
   height: 4rem;
   border: 2px solid #fff;
   border-radius: 15px;
-}
-.sites__icon {
-  width: 50%;
-  height: 50%;
-}
-.sites__controls {
-  color: #fff;
-  cursor: pointer;
 }
 
 .navigation {
