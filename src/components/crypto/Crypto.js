@@ -19,8 +19,8 @@ const Cypto = () => {
     setPrice(actualCoin.current_price);
   }, [actualCoin]);
 
-  const onChange = (e) => {
-    getActualCoin(e.target.value);
+  const onChange = (event) => {
+    getActualCoin(event.target.value);
   };
 
   if (loading)

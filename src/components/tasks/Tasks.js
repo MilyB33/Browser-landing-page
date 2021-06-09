@@ -1,24 +1,19 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Task from './Task';
 
-import TasksContext from '../../context/Tasks/tasksContext';
-
-const Tasks = () => {
-  const tasksContext = useContext(TasksContext);
-  const { tasks, getTasks } = tasksContext;
-
-  useEffect(() => {
-    getTasks();
-    // eslint-disable-next-line
-  }, []);
-
+const Tasks = ({ tasks, deleteTask }) => {
   return (
     <ul className="container">
       {tasks.map((task) => (
-        <Task key={task.id} task={task} />
+        <Task key={task.id} task={task} deleteTask={deleteTask} />
       ))}
     </ul>
   );
 };
 
+Tasks.propTypes = {
+  tasks: PropTypes.array.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+};
 export default Tasks;

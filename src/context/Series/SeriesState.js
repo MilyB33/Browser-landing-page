@@ -16,28 +16,15 @@ const SeriesState = (props) => {
     dispatch({ type: GET_SERIES });
   };
 
-  const addSeries = async (e, text) => {
-    e.preventDefault();
-    // console.log(`https://www.episodate.com/api/show-details?q=${text.replace(/ /g, '-')}`);
-    const search = await fetch(`https://www.episodate.com/api/search?q=${text}&page=1`, {
+  const addSeries = async (id) => {
+    const res = await fetch(`https://www.episodate.com/api/show-details?q=${id}`, {
       method: 'GET',
     });
-
-    const permalink = await search.json();
-
-    if (!permalink) return;
-
-    const res = await fetch(
-      `https://www.episodate.com/api/show-details?q=${permalink.tv_shows[0].permalink}`,
-      {
-        method: 'GET',
-      }
-    );
 
     const data = await res.json();
     console.log(data);
 
-    const { id, name, url, countdown } = data.tvShow;
+    const { name, url, countdown } = data.tvShow;
 
     dispatch({
       type: ADD_SERIES,

@@ -3,7 +3,7 @@
 .premieres {
   grid-column: 3/4;
   grid-row: 3/5;
-  padding: 1rem 2rem;
+  padding: 1rem;
   overflow-y: auto;
 
   &__controls {
@@ -37,4 +37,26 @@
 .btn__premiere__delete {
   font-size: 1.3rem;
   margin-left: auto;
+}
+
+.search__results {
+  font-size: 0.7rem;
+  text-align: center;
+  width: 100%;
+}
+
+.search__item > td {
+  border-bottom: 1px solid $clr-light-100;
+  padding: 0.5rem 0;
+}
+
+.search__add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--btn {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+  }
 }

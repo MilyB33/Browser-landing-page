@@ -232,7 +232,6 @@ h6 {
   border: 2px solid #fff;
 }
 .tasks__form__group {
-  border-bottom: 2px solid #fff;
   display: flex;
   align-items: center;
 }
@@ -274,13 +273,6 @@ h6 {
   line-height: 0;
 }
 
-.input__task__content {
-  width: 100%;
-  padding: 0.2rem;
-  font-size: 1rem;
-  resize: vertical;
-}
-
 .task {
   border: 2px solid #fff;
   padding: 0.8rem;
@@ -293,7 +285,7 @@ h6 {
 .premieres {
   grid-column: 3/4;
   grid-row: 3/5;
-  padding: 1rem 2rem;
+  padding: 1rem;
   overflow-y: auto;
 }
 .premieres__controls {
@@ -326,6 +318,27 @@ h6 {
 .btn__premiere__delete {
   font-size: 1.3rem;
   margin-left: auto;
+}
+
+.search__results {
+  font-size: 0.7rem;
+  text-align: center;
+  width: 100%;
+}
+
+.search__item > td {
+  border-bottom: 1px solid #fff;
+  padding: 0.5rem 0;
+}
+
+.search__add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search__add--btn {
+  padding: 0 0.5rem;
+  font-size: 1rem;
 }
 
 .notes {

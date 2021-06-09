@@ -1,13 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { MdDeleteForever as DeleteIcon } from 'react-icons/all';
 import PropTypes from 'prop-types';
 
-import NotesContext from '../../context/notes/notesContext';
-
-const NoteInfo = ({ id, title, content }) => {
-  const notesContext = useContext(NotesContext);
-  const { toggleEdit, removeNote } = notesContext;
-
+const NoteInfo = ({ id, title, content, toggleEdit, removeNote }) => {
   return (
     <div className="note" onDoubleClick={() => toggleEdit(id, true)}>
       <h2 className="note__title">
@@ -25,6 +20,8 @@ NoteInfo.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  toggleEdit: PropTypes.func.isRequired,
+  removeNote: PropTypes.func.isRequired,
 };
 
 export default NoteInfo;

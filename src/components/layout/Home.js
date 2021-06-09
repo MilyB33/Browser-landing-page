@@ -3,7 +3,7 @@ import Search from '../search/Search';
 import LikedSites from '../likedSites/LikedSites';
 import Navigation from '../navigation/Navigation';
 import DailyTasks from '../tasks/DailyTasks';
-import MovieSeries from '../movies/MoviesSeries';
+import TvShows from '../movies/TvShows';
 import Notes from '../notes/Notes';
 import Crypto from '../crypto/Crypto';
 import TimeWeather from '../time/TimeWeather';
@@ -22,7 +22,7 @@ const Home = () => {
         <TimeWeather />
         {showSites && <LikedSites />}
         {showTasks && <DailyTasks />}
-        {showTvShows && <MovieSeries />}
+        {showTvShows && <TvShows />}
         {showNotes && <Notes />}
         {showCrypto && <Crypto />}
         {showNav && <Navigation />}

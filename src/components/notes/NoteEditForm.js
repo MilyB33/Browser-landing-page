@@ -1,17 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import NotesContext from '../../context/notes/notesContext';
-
-const NoteEditForm = ({ id, title, content }) => {
-  const notesContext = useContext(NotesContext);
-  const { updateNote } = notesContext;
-
+const NoteEditForm = ({ id, title, content, updateNote }) => {
   const [newTitle, setNewTitle] = useState(title);
   const [newContent, setNewContent] = useState(content);
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    if (newTitle === '' || newContent === '') {
+      return;
+    }
+
     updateNote(id, newTitle, newContent, false);
   };
 
@@ -39,6 +39,7 @@ NoteEditForm.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  updateNote: PropTypes.func.isRequired,
 };
 
 export default NoteEditForm;

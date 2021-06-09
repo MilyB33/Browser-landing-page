@@ -3,19 +3,27 @@ import Spinner from '../layout/Spinner';
 import Temperature from './Temperature';
 
 const TimeWeather = () => {
-  const [actualTime, setActualTime] = useState(new Date().toLocaleTimeString());
-  const [actualDate, setActualDate] = useState(new Date().toLocaleDateString());
+  const [actualDate, setActualDate] = useState({
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
+  });
+
+  const { date, time } = actualDate;
+
   const [actualTemperature, setActualTemperature] = useState({
     temp: null,
     loading: true,
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      setActualTime(new Date().toLocaleTimeString());
-      if (actualTime === '00:00:01') setActualDate(new Date().toLocaleDateString());
+    setInterval(() => {
+      setActualDate({ ...actualDate, time: new Date().toLocaleTimeString() });
+
+      if (time === '00:00:01')
+        setActualDate({ ...actualDate, date: new Date().toLocaleDateString() });
     }, 1000);
-  }, [actualTime]);
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -46,8 +54,8 @@ const TimeWeather = () => {
 
   return (
     <section className="time__weather">
-      <h1 className="header__time">{actualTime}</h1>
-      <span className="actual__date">{actualDate}</span>
+      <h1 className="header__time">{time}</h1>
+      <span className="actual__date">{date}</span>
       <span className="actual__weather">
         {actualTemperature.loading ? (
           <Spinner />

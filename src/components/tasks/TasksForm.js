@@ -1,26 +1,28 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { MdAddCircleOutline as AddIcon } from 'react-icons/all';
-import TasksContext from '../../context/Tasks/tasksContext';
 
-const TasksForm = () => {
-  const tasksContext = useContext(TasksContext);
-
+const TasksForm = ({ onAdd }) => {
   const [task, setTask] = useState({
     title: '',
     time: '',
-    content: '',
   });
 
-  const { title, time, content } = task;
+  const { title, time } = task;
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    tasksContext.addTask(task);
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    if (title === '' || time === '') {
+      return;
+    }
+
+    onAdd(task);
 
     setTask({
       title: '',
       time: '',
-      content: '',
     });
   };
 
@@ -46,16 +48,12 @@ const TasksForm = () => {
           <AddIcon />
         </button>
       </div>
-
-      <textarea
-        name="content"
-        rows="2"
-        className="input__task__content"
-        onChange={(e) => setTask({ ...task, [e.target.name]: e.target.value })}
-        value={content}
-      />
     </form>
   );
+};
+
+TasksForm.propTypes = {
+  onAdd: PropTypes.func.isRequired,
 };
 
 export default TasksForm;

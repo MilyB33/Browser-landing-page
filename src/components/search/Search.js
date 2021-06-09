@@ -36,6 +36,7 @@ const Search = () => {
           type="text"
           placeholder="What's up doc? What are you looking for?"
           className="search__bar"
+          autoComplete="off"
         />
         {/* <button>
           <SearchIcon />

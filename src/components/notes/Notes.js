@@ -6,12 +6,13 @@ import NotesContext from '../../context/notes/notesContext';
 
 const Notes = () => {
   const notesContext = useContext(NotesContext);
-  const { getNotes, addNote, notes } = notesContext;
+  const { getNotes, addNote, notes, toggleEdit, removeNote, updateNote } = notesContext;
 
   useEffect(() => {
     getNotes();
     // eslint-disable-next-line
   }, []);
+
   return (
     <section className="notes">
       <h1>My Notes :</h1>
@@ -20,7 +21,13 @@ const Notes = () => {
       </button>
 
       {notes.map((note) => (
-        <Note key={note.id} note={note} />
+        <Note
+          key={note.id}
+          note={note}
+          toggleEdit={toggleEdit}
+          removeNote={removeNote}
+          updateNote={updateNote}
+        />
       ))}
     </section>
   );

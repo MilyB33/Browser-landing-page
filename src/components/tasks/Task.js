@@ -1,28 +1,29 @@
-import React, { Fragment, useContext } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import { FiDelete as DeleteIcon } from 'react-icons/all';
-import TasksContext from '../../context/Tasks/tasksContext';
 
-const Task = ({ task: { id, title, time, content } }) => {
-  const tasksContext = useContext(TasksContext);
-
+const Task = ({ task: { id, title, time }, deleteTask }) => {
   return (
-    <Fragment>
-      <li className="task">
-        <div className="task__info">
-          <h3>
-            {title} {time}
-          </h3>
-          <div className="task__controls">
-            <input type="checkbox" name="" id="" />
-            <button onClick={() => tasksContext.deleteTask(id)}>
-              <DeleteIcon />
-            </button>
-          </div>
+    <li className="task">
+      <div className="task__info">
+        <h3>
+          {title} {time}
+        </h3>
+        <div className="task__controls">
+          <input type="checkbox" name="" id="" />
+          <button onClick={() => deleteTask(id)}>
+            <DeleteIcon />
+          </button>
         </div>
-        <p className="task__content">{content}</p>
-      </li>
-    </Fragment>
+      </div>
+    </li>
   );
+};
+
+Task.propTypes = {
+  task: PropTypes.object.isRequired,
+  deleteTask: PropTypes.func.isRequired,
 };
 
 export default Task;
