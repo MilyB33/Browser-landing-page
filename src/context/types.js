@@ -17,6 +17,7 @@ export const TOGGLE_TVSHOWS = 'TOGGLE_TVSHOWS';
 export const TOGGLE_CRYPTO = 'TOGGLE_CRYPTO';
 export const TOGGLE_NOTES = 'TOGGLE_NOTES';
 export const TOGGLE_SITES = 'TOGGLE_SITES';
+export const TOGGLE_ALL = 'TOGGLE_ALL';
 export const GET_NOTES = 'GET_NOTES';
 export const ADD_NOTE = 'ADD_NOTE';
 export const UPDATE_NOTE = 'UPDATE_NOTE';

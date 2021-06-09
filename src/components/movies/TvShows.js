@@ -16,7 +16,7 @@ const TvShows = () => {
     // eslint-disable-next-line
   }, []);
 
-  const onSearch = async (event, text) => {
+  const onSearch = async (event, text, callback) => {
     event.preventDefault();
     if (text === '') return;
     const search = await fetch(`https://www.episodate.com/api/search?q=${text}&page=1`, {
@@ -25,11 +25,12 @@ const TvShows = () => {
 
     const data = await search.json();
     setTvShowsList(data.tv_shows);
+    callback('');
   };
 
   const onSubmit = (event, id) => {
     event.preventDefault();
-    addSeries(id);
+    if (id) addSeries(id);
     setTvShowsList([]);
   };
 

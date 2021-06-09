@@ -6,7 +6,12 @@ import SearchResult from './SearchResult';
 const SearchResults = ({ tvShowsList, onSubmit }) => {
   return (
     <table className="search__results">
-      <caption className="search__title">Search Results:</caption>
+      <caption className="search__title">
+        Search Results:
+        <span onClick={onSubmit} className="search__close">
+          Close
+        </span>
+      </caption>
       <thead>
         <tr>
           <th>ID</th>

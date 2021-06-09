@@ -12,11 +12,13 @@ const Options = () => {
     toggleNotes,
     toggleSites,
     toggleCrypto,
+    toggleAll,
     showTasks,
     showTvShows,
     showSites,
     showNotes,
     showCrypto,
+    showAll,
   } = navigationContext;
   return (
     <SubMenus>
@@ -54,6 +56,13 @@ const Options = () => {
         name="sites"
         onToggle={toggleSites}
         isShow={showSites}
+      />
+      <Option
+        text="Toggle/Untoggle ALL"
+        type="checkbox"
+        name="all"
+        onToggle={toggleAll}
+        isShow={showAll}
       />
     </SubMenus>
   );

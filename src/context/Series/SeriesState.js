@@ -26,6 +26,11 @@ const SeriesState = (props) => {
 
     const { name, url, countdown } = data.tvShow;
 
+    if (state.series.some((tvShow) => tvShow.id === id)) {
+      console.log('jest');
+      return;
+    }
+
     dispatch({
       type: ADD_SERIES,
       payload: {

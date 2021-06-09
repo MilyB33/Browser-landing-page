@@ -7,7 +7,7 @@ const TvShowsForm = ({ onSearch }) => {
   const [text, setText] = useState('');
 
   return (
-    <form onSubmit={(event) => onSearch(event, text)}>
+    <form onSubmit={(event) => onSearch(event, text, setText)}>
       <div className="premieres__controls">
         <input
           list="tvShows"

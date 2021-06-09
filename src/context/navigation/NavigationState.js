@@ -16,6 +16,7 @@ import {
   TOGGLE_CRYPTO,
   ADD_BOOKMARK,
   REMOVE_BOOKMARK,
+  TOGGLE_ALL,
 } from '../types';
 
 const NavigationState = (props) => {
@@ -31,12 +32,14 @@ const NavigationState = (props) => {
     showSites: true,
     showNotes: true,
     showCrypto: true,
+    showAll: false,
     bookmarks: [],
   };
 
   const [state, dispatch] = useReducer(NavigationReducer, initialState);
 
   // Function for control the changing navigation window
+
   const toggleNav = () => dispatch({ type: TOGGLE_NAV });
 
   const toggleDefault = () => dispatch({ type: TOGGLE_DEFAULT });
@@ -48,6 +51,8 @@ const NavigationState = (props) => {
   const toggleBookmarks = () => dispatch({ type: TOGGLE_BOOKMARKS });
 
   const toggleAdd = () => dispatch({ type: TOGGLE_ADD });
+
+  const toggleAll = () => dispatch({ type: TOGGLE_ALL });
 
   // Functionality visibility functions
 
@@ -92,6 +97,7 @@ const NavigationState = (props) => {
         showNotes: state.showNotes,
         showCrypto: state.showCrypto,
         bookmarks: state.bookmarks,
+        showAll: state.showAll,
         toggleNav,
         toggleOptions,
         toggleDefault,
@@ -105,6 +111,7 @@ const NavigationState = (props) => {
         toggleNotes,
         addBookmark,
         removeBookmark,
+        toggleAll,
       }}
     >
       {props.children}

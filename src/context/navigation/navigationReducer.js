@@ -12,6 +12,7 @@ import {
   TOGGLE_CRYPTO,
   ADD_BOOKMARK,
   REMOVE_BOOKMARK,
+  TOGGLE_ALL,
 } from '../types';
 
 export default (state, action) => {
@@ -92,6 +93,16 @@ export default (state, action) => {
       return {
         ...state,
         showCrypto: !state.showCrypto,
+      };
+    case TOGGLE_ALL:
+      return {
+        ...state,
+        showAll: !state.showAll,
+        showTasks: state.showAll,
+        showTvShows: state.showAll,
+        showSites: state.showAll,
+        showNotes: state.showAll,
+        showCrypto: state.showAll,
       };
     case ADD_BOOKMARK:
       return {
