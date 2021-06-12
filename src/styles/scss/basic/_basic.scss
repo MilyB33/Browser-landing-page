@@ -2,6 +2,7 @@
 
 :root {
   font-size: 10px;
+  color: $clr-light-100;
 }
 
 *,
@@ -11,7 +12,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: $font-primary;
-  color: $clr-light-100;
 }
 
 // FORMS
@@ -57,6 +57,7 @@ p {
 
 a {
   text-decoration: none;
+  color: $clr-light-100;
 }
 
 h1,

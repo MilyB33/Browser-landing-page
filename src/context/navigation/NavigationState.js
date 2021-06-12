@@ -17,6 +17,7 @@ import {
   ADD_BOOKMARK,
   REMOVE_BOOKMARK,
   TOGGLE_ALL,
+  TOGGLE_COLOR,
 } from '../types';
 
 const NavigationState = (props) => {
@@ -34,6 +35,9 @@ const NavigationState = (props) => {
     showCrypto: true,
     showAll: false,
     bookmarks: [],
+    colors: {
+      textColor: '#ffffff',
+    },
   };
 
   const [state, dispatch] = useReducer(NavigationReducer, initialState);
@@ -82,6 +86,13 @@ const NavigationState = (props) => {
 
   const removeBookmark = (id) => dispatch({ type: REMOVE_BOOKMARK, payload: id });
 
+  // Colors
+
+  const toggleTextColor = (value, name) => {
+    document.body.style.color = value;
+    dispatch({ type: TOGGLE_COLOR, payload: { value, name } });
+  };
+
   return (
     <NavigationContext.Provider
       value={{
@@ -98,6 +109,7 @@ const NavigationState = (props) => {
         showCrypto: state.showCrypto,
         bookmarks: state.bookmarks,
         showAll: state.showAll,
+        colors: state.colors,
         toggleNav,
         toggleOptions,
         toggleDefault,
@@ -112,6 +124,7 @@ const NavigationState = (props) => {
         addBookmark,
         removeBookmark,
         toggleAll,
+        toggleTextColor,
       }}
     >
       {props.children}

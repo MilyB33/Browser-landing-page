@@ -114,6 +114,14 @@ export default (state, action) => {
         ...state,
         bookmarks: state.bookmarks.filter((bookmark) => bookmark.id !== action.payload),
       };
+    case TOGGLE_COLORS:
+      return {
+        ...state,
+        colors: {
+          ...state.colors,
+          [action.payload.name]: action.payload.value,
+        },
+      };
     default:
       return state;
   }

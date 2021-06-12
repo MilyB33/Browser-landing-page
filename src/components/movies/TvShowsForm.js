@@ -26,7 +26,7 @@ const TvShowsForm = ({ onSearch }) => {
 };
 
 TvShowsForm.propTypes = {
-  addSeries: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
 };
 
 export default TvShowsForm;

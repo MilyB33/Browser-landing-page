@@ -25,3 +25,4 @@ export const TOGGLE_EDIT = 'TOGGLE_EDIT';
 export const REMOVE_NOTE = 'REMOVE_NOTE';
 export const ADD_BOOKMARK = 'ADD_BOOKMARK';
 export const REMOVE_BOOKMARK = 'REMOVE_BOOKMARK';
+export const TOGGLE_COLOR = 'TOGGLE_TEXT_COLOR';

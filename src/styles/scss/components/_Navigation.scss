@@ -30,6 +30,16 @@
 
     &:hover {
       background: $clr-dark-200;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 120%;
+        height: 120%;
+      }
     }
 
     &--top__left {

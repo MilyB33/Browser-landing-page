@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 :root {
   font-size: 10px;
+  color: #fff;
 }
 
 *,
@@ -10,7 +11,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  color: #fff;
 }
 
 input,
@@ -52,6 +52,7 @@ p {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 h1,
@@ -157,6 +158,15 @@ h4 {
 }
 .navigation__quarter:hover {
   background: #474242;
+}
+.navigation__quarter:hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
 }
 .navigation__quarter--top__left {
   top: 0;
