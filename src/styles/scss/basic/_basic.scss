@@ -1,5 +1,9 @@
 @use "../abstracts" as *;
 
+:root {
+  font-size: 10px;
+}
+
 *,
 *::after,
 *::before {
@@ -10,6 +14,8 @@
   color: $clr-light-100;
 }
 
+// FORMS
+
 input,
 textarea,
 select,
@@ -18,6 +24,7 @@ button {
   outline: none;
   background: none;
   color: $clr-light-100;
+  font-size: 2rem;
 
   &:focus {
     box-shadow: 0 0 8px 8px $clr-light-200;
@@ -32,13 +39,24 @@ button {
   cursor: pointer;
 }
 
+.btn--icon {
+  line-height: 0;
+}
+
+// LISTS
+
 ul {
   list-style: none;
 }
 
+// TYPOGRAPHY
+
+p {
+  font-size: 1.5em;
+}
+
 a {
   text-decoration: none;
-  color: $clr-light-100;
 }
 
 h1,
@@ -48,4 +66,20 @@ h4,
 h5,
 h6 {
   text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
 }

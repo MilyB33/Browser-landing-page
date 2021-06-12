@@ -12,9 +12,9 @@ import NavigationButton from '../navigation/NavigationButton';
 
 const Search = () => {
   return (
-    <main className="search">
+    <section className="search container--widget">
       <div className="socials">
-        <a href="youtube.com/" className="socials__link">
+        <a href="https://www.youtube.com/" className="socials__link">
           <YoutubeIcon />
         </a>
         <a href="https://www.facebook.com/" className="socials__link">
@@ -44,7 +44,7 @@ const Search = () => {
       </form>
 
       <NavigationButton />
-    </main>
+    </section>
   );
 };
 

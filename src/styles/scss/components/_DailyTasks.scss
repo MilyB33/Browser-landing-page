@@ -3,45 +3,29 @@
 .daily__tasks {
   grid-column: 3/4;
   grid-row: 1/3;
-  padding: 1rem 2rem;
-  overflow-y: auto;
 }
+
+// Task Form
 
 .tasks__form {
+  display: flex;
   margin: 1rem 0;
   border: 2px solid $clr-light-100;
-
-  &__group {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.task__info {
-  position: relative;
-}
-
-.task__controls {
-  display: flex;
-  gap: 1rem;
-  position: absolute;
-  right: 5%;
-  top: 5%;
-}
-
-.input__task__title,
-.input__task__time {
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 
 .input__task__title {
   width: 75%;
-  font-size: 1.3rem;
 }
 
 .input__task__time {
-  width: 20%;
+  width: 15%;
   text-align: center;
+}
+
+.input__task__btn {
+  padding: 0 2.5%;
+  margin-left: auto;
 }
 
 // it's for clock icon in some browsers
@@ -49,18 +33,29 @@
   display: none;
 }
 
-.input__task__submit {
-  font-size: 1.5rem;
-  margin-left: auto;
-  line-height: 0;
-}
+// Task display
 
 .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   border: 2px solid $clr-light-100;
-  padding: 0.8rem;
-  margin: 0.5rem;
+  padding: 0.5rem;
+  margin: 2rem 0.5rem;
+}
 
-  &__content {
-    font-size: 0.9rem;
-  }
+.task__title,
+.task__time {
+  width: 100%;
+}
+
+.task__time {
+  font-size: 2em;
+}
+
+.task__controls {
+  margin-left: auto;
+  display: inherit;
+  align-items: inherit;
+  gap: 2rem;
 }

@@ -7,24 +7,17 @@
   flex-direction: column;
   gap: 2rem;
   padding: 1rem 3rem;
-  overflow: auto;
 }
 
 .note {
   padding: 1rem 0;
   border-top: 1px dotted $clr-light-100;
-}
 
-.btn--delete__note {
-  font-size: inherit;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.btn--add__note {
-  font-size: 2rem;
-  @include push--auto;
+  &__delete__btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 .note__title {
@@ -47,19 +40,18 @@
 .note__modify__title {
   margin-bottom: 0.5rem;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .note__modify__content {
-  font-size: 1rem;
+  font-size: 1.5rem;
   resize: none;
 }
 
 .btn--save__note {
   @include push--auto;
   margin-top: 0.5rem;
-  background-color: rgba($clr-additional-200, 0.7);
   padding: 0.5rem 1rem;
+  border: 2px solid $clr-light-200;
   border-radius: 0 0 0 0;
-  box-shadow: 3px 3px 1px black;
 }

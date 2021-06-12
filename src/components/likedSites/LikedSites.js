@@ -12,24 +12,21 @@ const LikedSites = () => {
     autoplay: true,
   };
 
-  return (
-    <div className="sites">
-      <h1>Liked Sites</h1>
-      <div className="sites__container">
-        {/* <PreviousIcon className="sites__controls" /> */}
+  const renderedBookmarks = bookmarks.map(({ id, url, icon, name }) => {
+    return (
+      <a style={{ width: '4rem' }} key={id} href={url} className="sites__item" title={name}>
+        <img src={icon} alt="site icon" className="sites__icon" />
+      </a>
+    );
+  });
 
-        <Slider {...settings} className="sites__slider">
-          {bookmarks.map(({ id, url, icon, name }) => {
-            return (
-              <a style={{ width: '4rem' }} key={id} href={url} className="sites__item" title={name}>
-                <img src={icon} alt="site icon" className="sites__icon" />
-              </a>
-            );
-          })}
-        </Slider>
-        {/* <NextIcon className="sites__controls" /> */}
-      </div>
-    </div>
+  return (
+    <section className="container--widget sites">
+      <h1>Liked Sites</h1>
+      <Slider {...settings} className="sites__slider">
+        {renderedBookmarks}
+      </Slider>
+    </section>
   );
 };
 

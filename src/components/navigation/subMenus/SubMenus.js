@@ -9,19 +9,19 @@ const SubMenus = ({ onSubmit, children }) => {
   const { toggleDefault, toggleNav } = navigationContext;
 
   return (
-    <div className="subMenus">
-      <div className="subMenus__controls">
-        <button className="subMenus__control__btn" title="Go Back" onClick={toggleDefault}>
-          <GoBackIcon className="subMenus__icon" />
+    <section className="container__subMenu">
+      <div className="subMenu__controls">
+        <button className="subMenu__control__btn btn--icon" title="Go Back" onClick={toggleDefault}>
+          <GoBackIcon />
         </button>
-        <button className="subMenus__control__btn" title="Close Menu" onClick={toggleNav}>
-          <CloseIcon className="subMenus__icon" />
+        <button className="subMenu__control__btn btn--icon" title="Close Menu" onClick={toggleNav}>
+          <CloseIcon />
         </button>
       </div>
       <form className="options__form" onSubmit={onSubmit}>
         {children}
       </form>
-    </div>
+    </section>
   );
 };
 

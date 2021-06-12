@@ -20,6 +20,7 @@ const Options = () => {
     showCrypto,
     showAll,
   } = navigationContext;
+
   return (
     <SubMenus>
       <Option

@@ -14,7 +14,7 @@ body {
   background: linear-gradient(45deg, #e855e9 10%, #7e89c1, #00d4ff);
 }
 
-.container__main {
+.container__grid {
   height: 100vh;
   width: 100%;
   display: grid;
@@ -23,7 +23,7 @@ body {
   gap: 2rem;
 }
 
-.container--functionality {
+.container--widget {
   padding: 1rem 2rem;
   overflow-y: auto;
 }

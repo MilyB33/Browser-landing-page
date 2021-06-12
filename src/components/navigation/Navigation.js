@@ -47,7 +47,7 @@ const Navigation = () => {
         <PaletteIcon className="navigation__icon navigation__icon--palette" />
       </NavigationQuarter>
 
-      <div className="navigation__cutout">
+      <section className="navigation__cutout">
         {showDefault && (
           <img
             src={logo}
@@ -62,7 +62,7 @@ const Navigation = () => {
         {showColors && <Colors />}
         {showBookmarks && <Bookmarks />}
         {showAdd && <Add />}
-      </div>
+      </section>
     </nav>
   );
 };

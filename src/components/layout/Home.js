@@ -16,18 +16,16 @@ const Home = () => {
   const { showNav, showTasks, showTvShows, showNotes, showSites, showCrypto } = navigationContext;
 
   return (
-    <Fragment>
-      <div className="container__main">
-        <Search />
-        <TimeWeather />
-        {showSites && <LikedSites />}
-        {showTasks && <DailyTasks />}
-        {showTvShows && <TvShows />}
-        {showNotes && <Notes />}
-        {showCrypto && <Crypto />}
-        {showNav && <Navigation />}
-      </div>
-    </Fragment>
+    <main className="container__grid">
+      <Search />
+      <TimeWeather />
+      {showSites && <LikedSites />}
+      {showTasks && <DailyTasks />}
+      {showTvShows && <TvShows />}
+      {showNotes && <Notes />}
+      {showCrypto && <Crypto />}
+      {showNav && <Navigation />}
+    </main>
   );
 };
 

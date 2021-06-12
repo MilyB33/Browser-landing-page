@@ -6,16 +6,13 @@ import { FiDelete as DeleteIcon } from 'react-icons/all';
 const Task = ({ task: { id, title, time }, deleteTask }) => {
   return (
     <li className="task">
-      <div className="task__info">
-        <h3>
-          {title} {time}
-        </h3>
-        <div className="task__controls">
-          <input type="checkbox" name="" id="" />
-          <button onClick={() => deleteTask(id)}>
-            <DeleteIcon />
-          </button>
-        </div>
+      <h3 className="task__title">{title}</h3>
+      <time className="task__time">{time}</time>
+      <div className="task__controls">
+        <input type="checkbox" name="" id="" />
+        <button className="btn--icon" onClick={() => deleteTask(id)}>
+          <DeleteIcon />
+        </button>
       </div>
     </li>
   );

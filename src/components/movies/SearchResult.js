@@ -10,7 +10,7 @@ const SearchResult = ({ tvShow: { id, name, status }, onSubmit }) => {
       <td>{name}</td>
       <td>{status}</td>
       <td className="search__add">
-        <button className="search__add--btn" onClick={(event) => onSubmit(event, id)}>
+        <button className="btn--icon" onClick={(event) => onSubmit(event, id)}>
           <AddIcon />
         </button>
       </td>

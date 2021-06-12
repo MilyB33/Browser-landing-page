@@ -8,7 +8,7 @@ const NavigationButton = () => {
   const { toggleNav } = navigationContext;
 
   return (
-    <button className="btn__navigation" onClick={toggleNav}>
+    <button className="btn__navigation btn--icon" onClick={toggleNav}>
       <HamburgerIcon />
     </button>
   );

@@ -14,5 +14,6 @@ const NavigationQuarter = ({ children, additionalClass, onToggle }) => {
 
 NavigationQuarter.propTypes = {
   additionalClass: PropTypes.string.isRequired,
+  ontoggle: PropTypes.func.isRequired,
 };
 export default NavigationQuarter;

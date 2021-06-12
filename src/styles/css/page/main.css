@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  font-size: 10px;
+}
+
 *,
 *::after,
 *::before {
@@ -17,6 +21,7 @@ button {
   outline: none;
   background: none;
   color: #fff;
+  font-size: 2rem;
 }
 input:focus,
 textarea:focus,
@@ -33,13 +38,20 @@ button {
   cursor: pointer;
 }
 
+.btn--icon {
+  line-height: 0;
+}
+
 ul {
   list-style: none;
 }
 
+p {
+  font-size: 1.5em;
+}
+
 a {
   text-decoration: none;
-  color: #fff;
 }
 
 h1,
@@ -51,19 +63,33 @@ h6 {
   text-align: center;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
 .search {
   grid-row: 2/4;
   grid-column: 2/3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem 0;
 }
 .search__bar {
   width: 100%;
   border-bottom: 0.3rem solid #fff;
   min-width: 80%;
-  font-size: 1.5rem;
   padding: 0.5rem 0;
 }
 
@@ -71,44 +97,25 @@ h6 {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  padding: 1rem;
-  font-size: 2.5rem;
+  font-size: 4em;
 }
 .socials__link {
   transition: 0.5s;
-  padding: 0.2rem;
+  padding: 1rem;
+  line-height: 0;
 }
 .socials__link:hover {
-  transform: rotateZ(20deg);
-}
-
-.btn__navigation {
-  width: min-content;
-  margin-left: auto;
-  margin-right: auto;
-  width: 6rem;
-  height: 6rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background-color: #343131;
-  font-size: 2rem;
-  cursor: pointer;
+  transform: rotateZ(30deg);
 }
 
 .sites {
   grid-row: 4/5;
   grid-column: 2/3;
 }
-.sites__container {
-  margin-top: 2rem;
-  font-size: 3rem;
-}
 .sites__slider {
   margin-left: auto;
   margin-right: auto;
-  max-width: 20rem;
+  max-width: 25rem;
 }
 .sites__item {
   display: flex !important;
@@ -119,13 +126,26 @@ h6 {
   border-radius: 15px;
 }
 
+.btn__navigation {
+  margin-left: auto;
+  margin-right: auto;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  border-radius: 50%;
+  background-color: #343131;
+}
+
 .navigation {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 35rem;
-  height: 35rem;
+  width: 70rem;
+  height: 70rem;
 }
 .navigation__quarter {
   position: absolute;
@@ -182,11 +202,8 @@ h6 {
   width: 60%;
   height: 60%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  font-size: 3rem;
   background: linear-gradient(45deg, #8371cd, #ffffff);
   position: absolute;
   top: 50%;
@@ -195,7 +212,7 @@ h6 {
   border-radius: 50%;
 }
 .navigation__icon {
-  font-size: 3em;
+  font-size: 2em;
   position: absolute;
 }
 .navigation__icon--cog {
@@ -215,78 +232,69 @@ h6 {
   left: 35%;
 }
 .navigation__logo {
-  max-width: 10rem;
-  max-height: 10rem;
+  max-width: 15em;
+  max-height: 15em;
   cursor: pointer;
 }
 
 .daily__tasks {
   grid-column: 3/4;
   grid-row: 1/3;
-  padding: 1rem 2rem;
-  overflow-y: auto;
 }
 
 .tasks__form {
+  display: flex;
   margin: 1rem 0;
   border: 2px solid #fff;
-}
-.tasks__form__group {
-  display: flex;
-  align-items: center;
-}
-
-.task__info {
-  position: relative;
-}
-
-.task__controls {
-  display: flex;
-  gap: 1rem;
-  position: absolute;
-  right: 5%;
-  top: 5%;
-}
-
-.input__task__title,
-.input__task__time {
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 
 .input__task__title {
   width: 75%;
-  font-size: 1.3rem;
 }
 
 .input__task__time {
-  width: 20%;
+  width: 15%;
   text-align: center;
+}
+
+.input__task__btn {
+  padding: 0 2.5%;
+  margin-left: auto;
 }
 
 .input__task__time::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-.input__task__submit {
-  font-size: 1.5rem;
-  margin-left: auto;
-  line-height: 0;
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid #fff;
+  padding: 0.5rem;
+  margin: 2rem 0.5rem;
 }
 
-.task {
-  border: 2px solid #fff;
-  padding: 0.8rem;
-  margin: 0.5rem;
+.task__title,
+.task__time {
+  width: 100%;
 }
-.task__content {
-  font-size: 0.9rem;
+
+.task__time {
+  font-size: 2em;
+}
+
+.task__controls {
+  margin-left: auto;
+  display: inherit;
+  align-items: inherit;
+  gap: 2rem;
 }
 
 .premieres {
   grid-column: 3/4;
   grid-row: 3/5;
-  padding: 1rem;
-  overflow-y: auto;
 }
 .premieres__controls {
   margin: 1rem 0;
@@ -295,19 +303,17 @@ h6 {
   align-items: center;
 }
 
-.input__movie__title {
+.input__tvShow__title {
   width: 95%;
-  font-size: 1.3rem;
-  padding: 0.3rem;
+  padding: 0.5rem;
 }
 
-.input__movie__submit {
-  line-height: 0;
-  font-size: 1.5rem;
+.input__tvShow__submit {
   margin-left: auto;
+  margin-right: 0.5rem;
 }
 
-.premiere {
+.tvShow {
   display: flex;
   align-items: center;
   border: 2px solid #fff;
@@ -315,20 +321,18 @@ h6 {
   margin: 0.5rem;
 }
 
-.btn__premiere__delete {
-  font-size: 1.3rem;
+.btn__tvShow__delete {
   margin-left: auto;
 }
 
 .search__results {
-  font-size: 0.7rem;
   text-align: center;
   width: 100%;
 }
 
 .search__item > td {
   border-bottom: 1px solid #fff;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 
 .search__add {
@@ -336,22 +340,18 @@ h6 {
   align-items: center;
   justify-content: center;
 }
-.search__add--btn {
-  padding: 0 0.5rem;
-  font-size: 1rem;
-}
 
 .search__title {
-  font-size: 1rem;
   margin-bottom: 1rem;
   position: relative;
 }
 
 .search__close {
-  cursor: pointer;
   font-weight: bold;
+  font-size: 1.5rem;
   position: absolute;
   left: 0;
+  top: 0;
 }
 
 .notes {
@@ -361,25 +361,16 @@ h6 {
   flex-direction: column;
   gap: 2rem;
   padding: 1rem 3rem;
-  overflow: auto;
 }
 
 .note {
   padding: 1rem 0;
   border-top: 1px dotted #fff;
 }
-
-.btn--delete__note {
-  font-size: inherit;
+.note__delete__btn {
   position: absolute;
   right: 0;
   top: 0;
-}
-
-.btn--add__note {
-  font-size: 2rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .note__title {
@@ -402,11 +393,11 @@ h6 {
 .note__modify__title {
   margin-bottom: 0.5rem;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .note__modify__content {
-  font-size: 1rem;
+  font-size: 1.5rem;
   resize: none;
 }
 
@@ -414,10 +405,9 @@ h6 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.5rem;
-  background-color: rgba(24, 90, 219, 0.7);
   padding: 0.5rem 1rem;
+  border: 2px solid #dad4d4;
   border-radius: 0 0 0 0;
-  box-shadow: 3px 3px 1px black;
 }
 
 .crypto {
@@ -430,7 +420,6 @@ h6 {
 .crypto__select, .crypto__price {
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.3rem;
 }
 .crypto__select {
   border-bottom: 2px solid #fff;
@@ -458,22 +447,19 @@ h6 {
   margin: 0 1rem;
 }
 
-.subMenus {
+.container__subMenu {
   width: 100%;
   height: 100%;
   border-radius: inherit;
   text-align: center;
   background: #9fa0ff;
-  font-size: 1rem;
   overflow-y: auto;
 }
-.subMenus__controls {
+
+.subMenu__control__btn {
   margin-top: 1rem;
-  line-height: 0;
-}
-.subMenus__icon {
-  margin: 0 1rem;
-  font-size: 3rem;
+  font-size: 4rem;
+  margin: 1rem;
 }
 
 .options__form {
@@ -495,22 +481,30 @@ h6 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
-  font-size: 1rem;
+  font-size: 1.5em;
 }
 
 .option__input {
   margin-left: auto;
 }
 
+.bookmark__label {
+  font-size: 2em;
+  margin: 1rem;
+}
+
 .bookmarks__input {
-  width: 80%;
   border-bottom: 2px solid #fff;
 }
 
 .bookmarks__submit {
   margin: 1rem;
-  width: 80%;
+  padding: 0.5em;
   border: 2px solid #fff;
+  transition: 0.3s;
+}
+.bookmarks__submit:hover {
+  background: #343131;
 }
 
 .bookmark {
@@ -520,17 +514,15 @@ h6 {
   gap: 0.5rem;
 }
 
-.bookmark__remove {
+.bookmark__remove__btn {
   margin-right: auto;
-  font-size: 1rem;
-  line-height: 0;
 }
 
 body {
   background: linear-gradient(45deg, #e855e9 10%, #7e89c1, #00d4ff);
 }
 
-.container__main {
+.container__grid {
   height: 100vh;
   width: 100%;
   display: grid;
@@ -539,7 +531,7 @@ body {
   gap: 2rem;
 }
 
-.container--functionality {
+.container--widget {
   padding: 1rem 2rem;
   overflow-y: auto;
 }

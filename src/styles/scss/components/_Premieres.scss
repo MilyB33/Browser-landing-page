@@ -3,8 +3,6 @@
 .premieres {
   grid-column: 3/4;
   grid-row: 3/5;
-  padding: 1rem;
-  overflow-y: auto;
 
   &__controls {
     margin: 1rem 0;
@@ -14,19 +12,17 @@
   }
 }
 
-.input__movie__title {
+.input__tvShow__title {
   width: 95%;
-  font-size: 1.3rem;
-  padding: 0.3rem;
+  padding: 0.5rem;
 }
 
-.input__movie__submit {
-  line-height: 0;
-  font-size: 1.5rem;
+.input__tvShow__submit {
   margin-left: auto;
+  margin-right: 0.5rem;
 }
 
-.premiere {
+.tvShow {
   display: flex;
   align-items: center;
   border: 2px solid $clr-light-100;
@@ -34,42 +30,37 @@
   margin: 0.5rem;
 }
 
-.btn__premiere__delete {
-  font-size: 1.3rem;
+.btn__tvShow__delete {
   margin-left: auto;
 }
 
+// Results
+
 .search__results {
-  font-size: 0.7rem;
   text-align: center;
   width: 100%;
 }
 
 .search__item > td {
   border-bottom: 1px solid $clr-light-100;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 
 .search__add {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &--btn {
-    padding: 0 0.5rem;
-    font-size: 1rem;
-  }
 }
 
 .search__title {
-  font-size: 1rem;
   margin-bottom: 1rem;
   position: relative;
 }
 
 .search__close {
-  cursor: pointer;
   font-weight: bold;
+  font-size: 1.5rem;
   position: absolute;
   left: 0;
+  top: 0;
 }

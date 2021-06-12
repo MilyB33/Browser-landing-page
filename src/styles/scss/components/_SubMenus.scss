@@ -1,24 +1,21 @@
 @use '../abstracts/' as *;
 
-.subMenus {
+.container__subMenu {
   width: 100%;
   height: 100%;
   border-radius: inherit;
   text-align: center;
   background: $clr-additional-100;
-  font-size: 1rem;
   overflow-y: auto;
-
-  &__controls {
-    margin-top: 1rem;
-    line-height: 0;
-  }
-
-  &__icon {
-    margin: 0 1rem;
-    font-size: 3rem;
-  }
 }
+
+.subMenu__control__btn {
+  margin-top: 1rem;
+  font-size: 4rem;
+  margin: 1rem;
+}
+
+// Options
 
 .options__form {
   display: flex;
@@ -38,7 +35,7 @@
   width: 60%;
   @include push--auto;
   margin-top: 2rem;
-  font-size: 1rem;
+  font-size: 1.5em;
 }
 
 .option__input {
@@ -47,15 +44,24 @@
 
 // Bookmarks
 
+.bookmark__label {
+  font-size: 2em;
+  margin: 1rem;
+}
+
 .bookmarks__input {
-  width: 80%;
   border-bottom: 2px solid $clr-light-100;
 }
 
 .bookmarks__submit {
   margin: 1rem;
-  width: 80%;
+  padding: 0.5em;
   border: 2px solid $clr-light-100;
+  transition: 0.3s;
+
+  &:hover {
+    background: $clr-dark-100;
+  }
 }
 
 .bookmark {
@@ -65,8 +71,6 @@
   gap: 0.5rem;
 }
 
-.bookmark__remove {
+.bookmark__remove__btn {
   margin-right: auto;
-  font-size: 1rem;
-  line-height: 0;
 }

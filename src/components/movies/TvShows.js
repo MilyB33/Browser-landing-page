@@ -35,7 +35,7 @@ const TvShows = () => {
   };
 
   return (
-    <section className="premieres container--functionality">
+    <section className="premieres container--widget">
       <h1>Tv Shows Premieres</h1>
       <TvShowsForm onSearch={onSearch} />
 
@@ -44,8 +44,6 @@ const TvShows = () => {
       ) : (
         <SearchResults tvShowsList={tvShowsList} onSubmit={onSubmit} />
       )}
-
-      <div className="container"></div>
     </section>
   );
 };

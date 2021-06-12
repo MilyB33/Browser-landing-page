@@ -13,22 +13,25 @@ const Notes = () => {
     // eslint-disable-next-line
   }, []);
 
+  const renderedNotes = notes.map((note) => (
+    <Note
+      key={note.id}
+      note={note}
+      toggleEdit={toggleEdit}
+      removeNote={removeNote}
+      updateNote={updateNote}
+    />
+  ));
+
   return (
-    <section className="notes">
+    <section className="notes container--widget">
       <h1>My Notes :</h1>
-      <button className="btn btn--add__note" onClick={addNote}>
+
+      <button className="btn--icon" onClick={addNote}>
         <AddIcon />
       </button>
 
-      {notes.map((note) => (
-        <Note
-          key={note.id}
-          note={note}
-          toggleEdit={toggleEdit}
-          removeNote={removeNote}
-          updateNote={updateNote}
-        />
-      ))}
+      {renderedNotes}
     </section>
   );
 };

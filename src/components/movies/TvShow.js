@@ -5,11 +5,11 @@ import { FiDelete as DeleteIcon } from 'react-icons/all';
 
 const TvShow = ({ tvShow: { id, name, airDate }, removeSeries }) => {
   return (
-    <li className="premiere">
-      <h3 className="premiere__info">
+    <li className="tvShow">
+      <h4 className="tvShow__info">
         {name} {airDate}
-      </h3>
-      <button className="btn__premiere__delete" onClick={() => removeSeries(id)}>
+      </h4>
+      <button className="btn__tvShow__delete btn--icon" onClick={() => removeSeries(id)}>
         <DeleteIcon />
       </button>
     </li>

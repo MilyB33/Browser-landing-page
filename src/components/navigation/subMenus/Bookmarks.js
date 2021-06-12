@@ -34,7 +34,9 @@ const Bookmarks = () => {
     <SubMenus onSubmit={onFormSubmit}>
       <h1>Bookmarks</h1>
 
-      <label htmlFor="url">URL</label>
+      <label className="bookmark__label" htmlFor="url">
+        URL
+      </label>
       <input
         type="url"
         name="url"
@@ -44,7 +46,9 @@ const Bookmarks = () => {
         onChange={onChange}
       />
 
-      <label htmlFor="name">Name</label>
+      <label className="bookmark__label" htmlFor="name">
+        Name
+      </label>
       <input
         type="text"
         name="name"

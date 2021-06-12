@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 
 const NoteInfo = ({ id, title, content, toggleEdit, removeNote }) => {
   return (
-    <div className="note" onDoubleClick={() => toggleEdit(id, true)}>
-      <h2 className="note__title">
+    <article className="note" onDoubleClick={() => toggleEdit(id, true)}>
+      <h3 className="note__title">
         {title}
-        <button className="btn--delete__note" onClick={() => removeNote(id)}>
+
+        <button className="note__delete__btn btn--icon" onClick={() => removeNote(id)}>
           <DeleteIcon />
         </button>
-      </h2>
+      </h3>
+
       <p className="note__content">{content}</p>
-    </div>
+    </article>
   );
 };
 

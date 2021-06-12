@@ -13,11 +13,11 @@ const TvShowsForm = ({ onSearch }) => {
           list="tvShows"
           placeholder="Search Tv Show..."
           name="movie/series"
-          className="input__movie__title"
+          className="input__tvShow__title"
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
-        <button className="input__movie__submit">
+        <button className="input__tvShow__submit btn--icon">
           <SearchIcon />
         </button>
       </div>
