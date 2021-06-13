@@ -9,7 +9,6 @@ const Task = ({ task: { id, title, time }, deleteTask }) => {
       <h3 className="task__title">{title}</h3>
       <time className="task__time">{time}</time>
       <div className="task__controls">
-        <input type="checkbox" name="" id="" />
         <button className="btn--icon" onClick={() => deleteTask(id)}>
           <DeleteIcon />
         </button>

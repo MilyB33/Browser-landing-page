@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react';
+import React, { useContext } from 'react';
 import Search from '../search/Search';
 import LikedSites from '../likedSites/LikedSites';
 import Navigation from '../navigation/Navigation';

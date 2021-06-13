@@ -13,11 +13,20 @@ const DailyTasks = () => {
     // eslint-disable-next-line
   }, []);
 
+  const onFormSubmit = (task) => {
+    console.log(task);
+    if (task.title === '' || task.time === '') {
+      return;
+    }
+
+    addTask(task);
+  };
+
   return (
     <section className="daily__tasks container--widget">
       <h1 className="header">Your Daily Tasks :</h1>
 
-      <TasksForm onAdd={addTask} />
+      <TasksForm onFormSubmit={onFormSubmit} />
       <Tasks tasks={tasks} deleteTask={deleteTask} />
     </section>
   );

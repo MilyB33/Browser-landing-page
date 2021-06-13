@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { MdAddCircleOutline as AddIcon } from 'react-icons/all';
 
-const TasksForm = ({ onAdd }) => {
+const TasksForm = ({ onFormSubmit }) => {
   const [task, setTask] = useState({
     title: '',
     time: '12:00',
@@ -17,13 +17,7 @@ const TasksForm = ({ onAdd }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-
-    if (title === '' || time === '') {
-      return;
-    }
-
-    onAdd(task);
-
+    onFormSubmit(task);
     setTask({
       title: '',
       time: '12:00',
