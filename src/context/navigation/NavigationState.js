@@ -18,6 +18,7 @@ import {
   REMOVE_BOOKMARK,
   TOGGLE_ALL,
   TOGGLE_COLOR,
+  GET_BOOKMARKS,
 } from '../types';
 
 const NavigationState = (props) => {
@@ -74,6 +75,8 @@ const NavigationState = (props) => {
   const toggleCrypto = () => dispatch({ type: TOGGLE_CRYPTO });
 
   // Bookmarks
+
+  const getBookmarks = () => dispatch({ type: GET_BOOKMARKS });
 
   const addBookmark = (url, name) => {
     dispatch({
@@ -133,6 +136,7 @@ const NavigationState = (props) => {
         toggleSites,
         toggleCrypto,
         toggleNotes,
+        getBookmarks,
         addBookmark,
         removeBookmark,
         toggleAll,

@@ -1,9 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Slider from 'react-slick';
 import NavigationContext from '../../context/navigation/navigationContext';
 const LikedSites = () => {
   const navigationContext = useContext(NavigationContext);
-  const { bookmarks } = navigationContext;
+  const { bookmarks, getBookmarks } = navigationContext;
+
+  useEffect(() => {
+    getBookmarks();
+    // eslint-disable-next-line
+  }, []);
 
   const settings = {
     speed: 500,

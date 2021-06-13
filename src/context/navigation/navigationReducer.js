@@ -14,6 +14,7 @@ import {
   REMOVE_BOOKMARK,
   TOGGLE_ALL,
   TOGGLE_COLOR,
+  GET_BOOKMARKS,
 } from '../types';
 
 export default (state, action) => {
@@ -105,12 +106,22 @@ export default (state, action) => {
         showNotes: state.showAll,
         showCrypto: state.showAll,
       };
+    case GET_BOOKMARKS:
+      return {
+        ...state,
+        bookmarks: JSON.parse(localStorage.getItem('Bookmarks')),
+      };
     case ADD_BOOKMARK:
+      localStorage.setItem('Bookmarks', JSON.stringify([...state.bookmarks, action.payload]));
       return {
         ...state,
         bookmarks: [...state.bookmarks, action.payload],
       };
     case REMOVE_BOOKMARK:
+      localStorage.setItem(
+        'Bookmarks',
+        JSON.stringify(state.bookmarks.filter((bookmark) => bookmark.id !== action.payload))
+      );
       return {
         ...state,
         bookmarks: state.bookmarks.filter((bookmark) => bookmark.id !== action.payload),
