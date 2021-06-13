@@ -27,6 +27,7 @@ body {
 .container--widget {
   padding: 1rem 2rem;
   overflow-y: auto;
+  word-wrap: break-word; // optional if in the Tasks are long words
 }
 
 .spinner {

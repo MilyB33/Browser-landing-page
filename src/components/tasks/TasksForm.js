@@ -49,7 +49,7 @@ const TasksForm = ({ onFormSubmit }) => {
 };
 
 TasksForm.propTypes = {
-  onAdd: PropTypes.func.isRequired,
+  onFormSubmit: PropTypes.func.isRequired,
 };
 
 export default TasksForm;

@@ -7,15 +7,15 @@ const LikedSites = () => {
 
   const settings = {
     speed: 500,
-    slidesToShow: bookmarks.length < 5 ? bookmarks.length : 5,
-    variableWidth: true,
+    slidesToShow: bookmarks.length < 4 ? bookmarks.length : 4,
     autoplay: true,
   };
 
   const renderedBookmarks = bookmarks.map(({ id, url, icon, name }) => {
     return (
-      <a style={{ width: '4rem' }} key={id} href={url} className="sites__item" title={name}>
+      <a key={id} href={url} className="sites__item" title={name}>
         <img src={icon} alt="site icon" className="sites__icon" />
+        <p>{name}</p>
       </a>
     );
   });

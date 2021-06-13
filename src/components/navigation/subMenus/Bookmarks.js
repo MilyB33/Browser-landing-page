@@ -22,6 +22,7 @@ const Bookmarks = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+
     navigationContext.addBookmark(url, name);
   };
 
@@ -44,6 +45,7 @@ const Bookmarks = () => {
         placeholder="URL..."
         value={url}
         onChange={onChange}
+        required
       />
 
       <label className="bookmark__label" htmlFor="name">
@@ -56,6 +58,7 @@ const Bookmarks = () => {
         placeholder="Name..."
         value={name}
         onChange={onChange}
+        required
       />
 
       <button className="bookmarks__submit">Add Site</button>
