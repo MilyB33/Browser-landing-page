@@ -13,6 +13,7 @@ import {
   ADD_BOOKMARK,
   REMOVE_BOOKMARK,
   TOGGLE_ALL,
+  TOGGLE_COLOR,
 } from '../types';
 
 export default (state, action) => {
@@ -114,7 +115,7 @@ export default (state, action) => {
         ...state,
         bookmarks: state.bookmarks.filter((bookmark) => bookmark.id !== action.payload),
       };
-    case TOGGLE_COLORS:
+    case TOGGLE_COLOR:
       return {
         ...state,
         colors: {

@@ -8,7 +8,24 @@ const TvShowsList = ({ series, removeSeries }) => {
     <TvShow key={tvShow.id} tvShow={tvShow} removeSeries={removeSeries} />
   ));
 
-  return <ul>{renderedShows}</ul>;
+  return (
+    <table className="list__results">
+      <thead>
+        <tr>
+          <th>
+            <h3>Name:</h3>
+          </th>
+          <th>
+            <h3>Air Date:</h3>{' '}
+          </th>
+          <th>
+            <h3>Remove:</h3>{' '}
+          </th>
+        </tr>
+      </thead>
+      <tbody>{renderedShows}</tbody>
+    </table>
+  );
 };
 
 TvShowsList.propTypes = {

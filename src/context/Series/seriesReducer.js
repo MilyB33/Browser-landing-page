@@ -8,10 +8,17 @@ export default (state, action) => {
         series: JSON.parse(localStorage.getItem('TvShows')) || [],
       };
     case ADD_SERIES:
-      localStorage.setItem('TvShows', JSON.stringify([...state.series, action.payload]));
+      localStorage.setItem(
+        'TvShows',
+        JSON.stringify(
+          [...state.series, action.payload].sort((a, b) => (a.airDate > b.airDate && 1) || -1)
+        )
+      );
       return {
         ...state,
-        series: [...state.series, action.payload],
+        series: [...state.series, action.payload].sort(
+          (a, b) => (a.airDate > b.airDate && 1) || -1
+        ),
       };
     case REMOVE_SERIES:
       localStorage.setItem(

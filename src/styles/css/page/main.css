@@ -323,24 +323,14 @@ h4 {
   margin-right: 0.5rem;
 }
 
-.tvShow {
-  display: flex;
-  align-items: center;
-  border: 2px solid #fff;
-  padding: 0.8rem;
-  margin: 0.5rem;
-}
-
-.btn__tvShow__delete {
-  margin-left: auto;
-}
-
-.search__results {
+.search__results,
+.list__results {
   text-align: center;
   width: 100%;
 }
 
-.search__item > td {
+.search__item > td,
+.tvShow__item > td {
   border-bottom: 1px solid #fff;
   padding: 1rem 0;
 }
@@ -528,8 +518,28 @@ h4 {
   margin-right: auto;
 }
 
+.alert {
+  text-align: center;
+  border: 2px solid #fff;
+  margin: 0 2rem;
+  padding: 0.5rem;
+  background: yellow;
+}
+
+.dangerous {
+  background: #e63946;
+}
+
+.good {
+  background: #55a630;
+}
+
+.warn {
+  background: #f8961e;
+}
+
 body {
-  background: linear-gradient(45deg, #e855e9 10%, #7e89c1, #00d4ff);
+  background: linear-gradient(45deg, #e855e9, #7e89c1, #00d4ff);
 }
 
 .container__grid {

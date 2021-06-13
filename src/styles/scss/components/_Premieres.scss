@@ -22,26 +22,16 @@
   margin-right: 0.5rem;
 }
 
-.tvShow {
-  display: flex;
-  align-items: center;
-  border: 2px solid $clr-light-100;
-  padding: 0.8rem;
-  margin: 0.5rem;
-}
+// Results | TvShowsList
 
-.btn__tvShow__delete {
-  margin-left: auto;
-}
-
-// Results
-
-.search__results {
+.search__results,
+.list__results {
   text-align: center;
   width: 100%;
 }
 
-.search__item > td {
+.search__item > td,
+.tvShow__item > td {
   border-bottom: 1px solid $clr-light-100;
   padding: 1rem 0;
 }

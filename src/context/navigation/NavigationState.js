@@ -36,7 +36,10 @@ const NavigationState = (props) => {
     showAll: false,
     bookmarks: [],
     colors: {
-      textColor: '#ffffff',
+      fontColor: '#ffffff',
+      firstBgColor: '#e855e9',
+      secondBgColor: '#7e89c1',
+      thirdBgColor: '#00d4ff',
     },
   };
 
@@ -88,8 +91,17 @@ const NavigationState = (props) => {
 
   // Colors
 
-  const toggleTextColor = (value, name) => {
-    document.body.style.color = value;
+  const toggleColor = (value, name) => {
+    switch (name) {
+      case 'fontColor':
+        console.log('A');
+        document.body.style.color = value;
+        break;
+      case 'firstBgColor':
+        document.body.style.background = `linear-gradient(45deg, ${state.colors.firstBgColor}, ${state.colors.secondBgColor}, ${state.colors.thirdBgColor})`;
+        break;
+    }
+
     dispatch({ type: TOGGLE_COLOR, payload: { value, name } });
   };
 
@@ -124,7 +136,7 @@ const NavigationState = (props) => {
         addBookmark,
         removeBookmark,
         toggleAll,
-        toggleTextColor,
+        toggleColor,
       }}
     >
       {props.children}

@@ -16,6 +16,7 @@ const DailyTasks = () => {
   return (
     <section className="daily__tasks container--widget">
       <h1 className="header">Your Daily Tasks :</h1>
+
       <TasksForm onAdd={addTask} />
       <Tasks tasks={tasks} deleteTask={deleteTask} />
     </section>
