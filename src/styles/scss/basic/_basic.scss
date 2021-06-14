@@ -24,7 +24,7 @@ button {
   outline: none;
   background: none;
   color: $clr-light-100;
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   &:focus {
     box-shadow: 0 0 8px 8px $clr-light-200;
@@ -56,7 +56,7 @@ ul {
 // TYPOGRAPHY
 
 p {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 a {
@@ -74,17 +74,46 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
   font-size: 2rem;
 }
 
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
 h4 {
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 1100px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 2rem;
+  }
 }

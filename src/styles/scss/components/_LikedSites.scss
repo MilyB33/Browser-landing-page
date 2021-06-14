@@ -1,13 +1,27 @@
 @use '../abstracts' as *;
 
 .sites {
-  grid-row: 4/5;
-  grid-column: 2/3;
+  grid-row: 3/4;
+  grid-column: 1/2;
+
+  @media (min-width: 800px) {
+    grid-row: 3/4;
+    grid-column: 2/4;
+  }
+
+  @media (min-width: 1200px) {
+    grid-row: 4/5;
+    grid-column: 2/3;
+  }
 
   &__slider {
     margin-top: 2rem;
     @include push--auto;
-    max-width: 40rem;
+    max-width: 30rem;
+
+    @media (min-width: 500px) {
+      max-width: 40rem;
+    }
   }
 
   &__item {
@@ -32,8 +46,12 @@
 }
 
 .slick-slide > div {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
+
+  @media (min-width: 500px) {
+    margin: 0 1rem;
+  }
 }
 .slick-list {
-  margin: 0 -0rem;
+  margin: 0 -1rem;
 }
