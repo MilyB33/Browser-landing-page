@@ -15,9 +15,11 @@ import {
   TOGGLE_ALL,
   TOGGLE_COLOR,
   GET_BOOKMARKS,
+  GET_WIDGETS,
 } from '../types';
 // eslint-disable-next-line
 export default (state, action) => {
+  let temp = {};
   switch (action.type) {
     case TOGGLE_NAV:
       return {
@@ -27,84 +29,141 @@ export default (state, action) => {
     case TOGGLE_DEFAULT: {
       return {
         ...state,
-        showDefault: true,
-        showOptions: false,
-        showColors: false,
-        showBookmarks: false,
-        showAdd: false,
+        navDisplays: {
+          showDefault: true,
+          showOptions: false,
+          showColors: false,
+          showBookmarks: false,
+          showAdd: false,
+        },
       };
     }
     case TOGGLE_OPTIONS:
       return {
         ...state,
-        showDefault: false,
-        showOptions: true,
-        showColors: false,
-        showBookmarks: false,
-        showAdd: false,
+        navDisplays: {
+          showDefault: false,
+          showOptions: true,
+          showColors: false,
+          showBookmarks: false,
+          showAdd: false,
+        },
       };
 
     case TOGGLE_COLORS:
       return {
         ...state,
-        showDefault: false,
-        showOptions: false,
-        showColors: true,
-        showBookmarks: false,
-        showAdd: false,
+        navDisplays: {
+          showDefault: false,
+          showOptions: false,
+          showColors: true,
+          showBookmarks: false,
+          showAdd: false,
+        },
       };
     case TOGGLE_BOOKMARKS:
       return {
         ...state,
-        showDefault: false,
-        showOptions: false,
-        showColors: false,
-        showBookmarks: true,
-        showAdd: false,
+        navDisplays: {
+          showDefault: false,
+          showOptions: false,
+          showColors: false,
+          showBookmarks: true,
+          showAdd: false,
+        },
       };
     case TOGGLE_ADD:
       return {
         ...state,
-        showDefault: false,
-        showOptions: false,
-        showColors: false,
-        showBookmarks: false,
-        showAdd: true,
+        navDisplays: {
+          showDefault: false,
+          showOptions: false,
+          showColors: false,
+          showBookmarks: false,
+          showAdd: true,
+        },
+      };
+    case GET_WIDGETS:
+      return {
+        ...state,
+        ...(JSON.parse(localStorage.getItem('Widgets')) || {}),
       };
     case TOGGLE_TASKS:
+      temp = {
+        widgetsDisplays: {
+          ...state.widgetsDisplays,
+          showTasks: !state.widgetsDisplays.showTasks,
+        },
+      };
+      localStorage.setItem('Widgets', JSON.stringify(temp));
       return {
         ...state,
-        showTasks: !state.showTasks,
+        ...temp,
       };
     case TOGGLE_TVSHOWS:
+      temp = {
+        widgetsDisplays: {
+          ...state.widgetsDisplays,
+          showTvShows: !state.widgetsDisplays.showTvShows,
+        },
+      };
+      localStorage.setItem('Widgets', JSON.stringify(temp));
       return {
         ...state,
-        showTvShows: !state.showTvShows,
+        ...temp,
       };
     case TOGGLE_SITES:
+      temp = {
+        widgetsDisplays: {
+          ...state.widgetsDisplays,
+          showSites: !state.widgetsDisplays.showSites,
+        },
+      };
+      localStorage.setItem('Widgets', JSON.stringify(temp));
       return {
         ...state,
-        showSites: !state.showSites,
+        ...temp,
       };
     case TOGGLE_NOTES:
+      temp = {
+        widgetsDisplays: {
+          ...state.widgetsDisplays,
+          showNotes: !state.widgetsDisplays.showNotes,
+        },
+      };
+      localStorage.setItem('Widgets', JSON.stringify(temp));
       return {
         ...state,
-        showNotes: !state.showNotes,
+        ...temp,
       };
     case TOGGLE_CRYPTO:
+      temp = {
+        widgetsDisplays: {
+          ...state.widgetsDisplays,
+          showCrypto: !state.widgetsDisplays.showCrypto,
+        },
+      };
+      localStorage.setItem('Widgets', JSON.stringify(temp));
       return {
         ...state,
-        showCrypto: !state.showCrypto,
+        ...temp,
       };
     case TOGGLE_ALL:
+      temp = {
+        widgetsDisplays: {
+          ...state.widgetsDisplays,
+          showAll: !state.widgetsDisplays.showAll,
+          showTasks: state.widgetsDisplays.showAll,
+          showTvShows: state.widgetsDisplays.showAll,
+          showSites: state.widgetsDisplays.showAll,
+          showNotes: state.widgetsDisplays.showAll,
+          showCrypto: state.widgetsDisplays.showAll,
+        },
+      };
+      localStorage.setItem('Widgets', JSON.stringify(temp));
       return {
         ...state,
-        showAll: !state.showAll,
-        showTasks: state.showAll,
-        showTvShows: state.showAll,
-        showSites: state.showAll,
-        showNotes: state.showAll,
-        showCrypto: state.showAll,
+        ...temp,
       };
     case GET_BOOKMARKS:
       return {

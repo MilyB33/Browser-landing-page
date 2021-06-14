@@ -37,7 +37,7 @@ const TimeWeather = () => {
         const longitude = position.coords.longitude;
 
         const res = await fetch(
-          `http://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=civillight&output=json`,
+          `https://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=civillight&output=json`,
           {
             method: 'GET',
           }

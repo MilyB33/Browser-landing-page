@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Search from '../search/Search';
 import LikedSites from '../likedSites/LikedSites';
 import Navigation from '../navigation/Navigation';
@@ -13,7 +13,16 @@ import NavigationContext from '../../context/navigation/navigationContext';
 const Home = () => {
   const navigationContext = useContext(NavigationContext);
 
-  const { showNav, showTasks, showTvShows, showNotes, showSites, showCrypto } = navigationContext;
+  const {
+    showNav,
+    getWidgets,
+    widgetsDisplays: { showTasks, showTvShows, showNotes, showSites, showCrypto },
+  } = navigationContext;
+
+  useEffect(() => {
+    getWidgets();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <main className="container__grid">

@@ -13,12 +13,7 @@ const Options = () => {
     toggleSites,
     toggleCrypto,
     toggleAll,
-    showTasks,
-    showTvShows,
-    showSites,
-    showNotes,
-    showCrypto,
-    showAll,
+    widgetsDisplays: { showTasks, showTvShows, showSites, showNotes, showCrypto, showAll },
   } = navigationContext;
 
   return (

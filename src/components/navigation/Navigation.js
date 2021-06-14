@@ -19,18 +19,10 @@ import NavigationContext from '../../context/navigation/navigationContext';
 const Navigation = () => {
   const navigationContext = useContext(NavigationContext);
 
-  const {
-    toggleNav,
-    toggleOptions,
-    toggleColors,
-    toggleBookmarks,
-    toggleAdd,
-    showDefault,
-    showOptions,
-    showColors,
-    showBookmarks,
-    showAdd,
-  } = navigationContext;
+  const { toggleNav, toggleOptions, toggleColors, toggleBookmarks, toggleAdd, navDisplays } =
+    navigationContext;
+
+  const { showDefault, showOptions, showColors, showBookmarks, showAdd } = navDisplays;
 
   return (
     <nav className="navigation">

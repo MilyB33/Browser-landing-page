@@ -19,22 +19,29 @@ import {
   TOGGLE_ALL,
   TOGGLE_COLOR,
   GET_BOOKMARKS,
+  GET_WIDGETS,
 } from '../types';
 
 const NavigationState = (props) => {
   const initialState = {
     showNav: false,
-    showDefault: true,
-    showOptions: false,
-    showColors: false,
-    showBookmarks: false,
-    showAdd: false,
-    showTasks: true,
-    showTvShows: true,
-    showSites: true,
-    showNotes: true,
-    showCrypto: true,
-    showAll: false,
+    navDisplays: {
+      showDefault: true,
+      showOptions: false,
+      showColors: false,
+      showBookmarks: false,
+      showAdd: false,
+    },
+
+    widgetsDisplays: {
+      showTasks: true,
+      showTvShows: true,
+      showSites: true,
+      showNotes: true,
+      showCrypto: true,
+      showAll: false,
+    },
+
     bookmarks: [],
     colors: {
       fontColor: '#ffffff',
@@ -62,7 +69,9 @@ const NavigationState = (props) => {
 
   const toggleAll = () => dispatch({ type: TOGGLE_ALL });
 
-  // Functionality visibility functions
+  // Widgets visibility functions
+
+  const getWidgets = () => dispatch({ type: GET_WIDGETS });
 
   const toggleTasks = () => dispatch({ type: TOGGLE_TASKS });
 
@@ -114,19 +123,11 @@ const NavigationState = (props) => {
     <NavigationContext.Provider
       value={{
         showNav: state.showNav,
-        showDefault: state.showDefault,
-        showOptions: state.showOptions,
-        showColors: state.showColors,
-        showBookmarks: state.showBookmarks,
-        showAdd: state.showAdd,
-        showTasks: state.showTasks,
-        showTvShows: state.showTvShows,
-        showSites: state.showSites,
-        showNotes: state.showNotes,
-        showCrypto: state.showCrypto,
+        navDisplays: state.navDisplays,
+        widgetsDisplays: state.widgetsDisplays,
         bookmarks: state.bookmarks,
-        showAll: state.showAll,
         colors: state.colors,
+        getWidgets,
         toggleNav,
         toggleOptions,
         toggleDefault,
