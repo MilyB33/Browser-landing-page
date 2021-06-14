@@ -17,7 +17,7 @@ const SeriesState = (props) => {
   };
 
   const addSeries = async (id) => {
-    const res = await fetch(`https://www.episodate.com/api/show-details?q=${id}`, {
+    const res = await fetch(`${URL}${id}`, {
       method: 'GET',
     });
 

@@ -1,5 +1,5 @@
 import { ADD_TASK, REMOVE_TASK, GET_TASKS } from '../types';
-
+// eslint-disable-next-line
 export default (state, action) => {
   switch (action.type) {
     case GET_TASKS:

@@ -1,5 +1,5 @@
 import { ADD_NOTE, GET_NOTES, REMOVE_NOTE, TOGGLE_EDIT, UPDATE_NOTE } from '../types';
-
+// eslint-disable-next-line
 export default (state, action) => {
   switch (action.type) {
     case GET_NOTES:

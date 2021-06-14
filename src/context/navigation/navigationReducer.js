@@ -16,7 +16,7 @@ import {
   TOGGLE_COLOR,
   GET_BOOKMARKS,
 } from '../types';
-
+// eslint-disable-next-line
 export default (state, action) => {
   switch (action.type) {
     case TOGGLE_NAV:
@@ -109,7 +109,7 @@ export default (state, action) => {
     case GET_BOOKMARKS:
       return {
         ...state,
-        bookmarks: JSON.parse(localStorage.getItem('Bookmarks')),
+        bookmarks: JSON.parse(localStorage.getItem('Bookmarks')) || [],
       };
     case ADD_BOOKMARK:
       localStorage.setItem('Bookmarks', JSON.stringify([...state.bookmarks, action.payload]));
