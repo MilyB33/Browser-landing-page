@@ -103,6 +103,8 @@ const NavigationState = (props) => {
       case 'firstBgColor':
         document.body.style.background = `linear-gradient(45deg, ${state.colors.firstBgColor}, ${state.colors.secondBgColor}, ${state.colors.thirdBgColor})`;
         break;
+      default:
+        break;
     }
 
     dispatch({ type: TOGGLE_COLOR, payload: { value, name } });
