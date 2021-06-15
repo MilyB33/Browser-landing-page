@@ -19,12 +19,12 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 20vh 45vh 20vh repeat(4, minmax(0vh, 50vh));
+  grid-template-rows: 10vh 50vh 25vh repeat(4, minmax(0vh, 50vh));
   gap: 5rem;
 
   @media (min-width: 800px) {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 20vh 60vh 20vh repeat(2, 1fr);
+    grid-template-rows: 10vh 60vh 25vh repeat(2, 1fr);
     gap: 1rem;
   }
 

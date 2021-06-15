@@ -35,7 +35,11 @@
   width: 60%;
   @include push--auto;
   margin-top: 2rem;
-  font-size: 1.5em;
+  font-size: 1.2em;
+
+  @media (min-width: 500px) {
+    font-size: 1.5em;
+  }
 }
 
 .option__input {
@@ -45,7 +49,6 @@
 // Bookmarks
 
 .bookmark__label {
-  font-size: 2em;
   margin: 1rem;
 }
 

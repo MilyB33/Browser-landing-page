@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import Spinner from '../layout/Spinner';
 import Temperature from './Temperature';
 
@@ -47,6 +47,7 @@ const TimeWeather = () => {
       },
       (err) => {
         console.log(err);
+        setActualTemperature({ temp: null, loading: false });
       }
     );
     // eslint-disable-next-line
@@ -60,7 +61,9 @@ const TimeWeather = () => {
         {actualTemperature.loading ? (
           <Spinner />
         ) : (
-          <Temperature temperature={actualTemperature.temp} />
+          <Fragment>
+            {actualTemperature.temp ? <Temperature temperature={actualTemperature.temp} /> : ''}
+          </Fragment>
         )}
       </span>
     </section>
