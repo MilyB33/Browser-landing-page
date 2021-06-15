@@ -17,20 +17,21 @@
 
 // Task Form
 
-.tasks__form {
+.tasks__controls {
   display: flex;
   margin: 1rem 0;
   border: 2px solid $clr-light-100;
-  padding: 0.5rem;
 }
 
 .input__task__title {
-  width: 75%;
+  flex-grow: 2;
+  padding: 0.5rem;
 }
 
 .input__task__time {
-  width: 15%;
+  flex-grow: 2;
   text-align: center;
+  padding: 0.5rem;
 }
 
 .input__task__btn {

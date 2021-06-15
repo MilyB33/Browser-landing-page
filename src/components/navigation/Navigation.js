@@ -10,7 +10,7 @@ import NavigationQuarter from './NavigationQuarter';
 import Options from './subMenus/Options';
 import Colors from './subMenus/Colors';
 import Bookmarks from './subMenus/Bookmarks';
-import Add from './subMenus/Add';
+import About from './subMenus/About';
 
 import logo from '../../static/images/gas-mask.png';
 
@@ -19,10 +19,10 @@ import NavigationContext from '../../context/navigation/navigationContext';
 const Navigation = () => {
   const navigationContext = useContext(NavigationContext);
 
-  const { toggleNav, toggleOptions, toggleColors, toggleBookmarks, toggleAdd, navDisplays } =
+  const { toggleNav, toggleOptions, toggleColors, toggleBookmarks, toggleAbout, navDisplays } =
     navigationContext;
 
-  const { showDefault, showOptions, showColors, showBookmarks, showAdd } = navDisplays;
+  const { showDefault, showOptions, showColors, showBookmarks, showAbout } = navDisplays;
 
   return (
     <nav className="navigation">
@@ -32,7 +32,7 @@ const Navigation = () => {
       <NavigationQuarter additionalClass="--top__right" onToggle={toggleBookmarks}>
         <BookmarkIcon className="navigation__icon navigation__icon--bookmark" />
       </NavigationQuarter>
-      <NavigationQuarter additionalClass="--bottom__right" onToggle={toggleAdd}>
+      <NavigationQuarter additionalClass="--bottom__right" onToggle={toggleAbout}>
         <PlusIcon className="navigation__icon navigation__icon--plus" />
       </NavigationQuarter>
       <NavigationQuarter additionalClass="--bottom__left" onToggle={toggleColors}>
@@ -53,7 +53,7 @@ const Navigation = () => {
         {showOptions && <Options />}
         {showColors && <Colors />}
         {showBookmarks && <Bookmarks />}
-        {showAdd && <Add />}
+        {showAbout && <About />}
       </section>
     </nav>
   );

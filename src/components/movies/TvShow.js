@@ -13,7 +13,12 @@ const TvShow = ({ tvShow: { id, name, airDate }, removeSeries }) => {
         <h4>{airDate}</h4>
       </td>
       <td>
-        <button className=" btn--icon" onClick={() => removeSeries(id)}>
+        <button
+          className=" btn--icon"
+          onClick={() => removeSeries(id)}
+          name="delete-TvShow"
+          title="Delete"
+        >
           <DeleteIcon />
         </button>
       </td>

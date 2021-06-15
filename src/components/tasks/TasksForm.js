@@ -11,9 +11,7 @@ const TasksForm = ({ onFormSubmit }) => {
 
   const { title, time } = task;
 
-  const onInputChange = (event) => {
-    setTask({ ...task, [event.target.name]: event.target.value });
-  };
+  const onInputChange = (event) => setTask({ ...task, [event.target.name]: event.target.value });
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -25,25 +23,27 @@ const TasksForm = ({ onFormSubmit }) => {
   };
 
   return (
-    <form className="tasks__form" onSubmit={onSubmit}>
-      <input
-        type="text"
-        placeholder="Add Task..."
-        name="title"
-        className="input__task__title"
-        onChange={onInputChange}
-        value={title}
-      />
-      <input
-        type="time"
-        name="time"
-        className="input__task__time"
-        onChange={onInputChange}
-        value={time}
-      />
-      <button className="input__task__btn btn--icon">
-        <AddIcon />
-      </button>
+    <form onSubmit={onSubmit}>
+      <div className="tasks__controls">
+        <input
+          type="text"
+          placeholder="Add Task..."
+          name="title"
+          className="input__task__title"
+          onChange={onInputChange}
+          value={title}
+        />
+        <input
+          type="time"
+          name="time"
+          className="input__task__time"
+          onChange={onInputChange}
+          value={time}
+        />
+        <button className="input__task__btn btn--icon" name="add-task" title="Add Task">
+          <AddIcon />
+        </button>
+      </div>
     </form>
   );
 };

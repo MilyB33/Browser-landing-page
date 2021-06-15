@@ -2,17 +2,26 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const NoteEditForm = ({ id, title, content, updateNote }) => {
-  const [newTitle, setNewTitle] = useState(title);
-  const [newContent, setNewContent] = useState(content);
+  const [noteData, setNoteData] = useState({
+    title,
+    content,
+  });
+
+  const onInputChange = (event) => {
+    setNoteData({
+      ...noteData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    if (newTitle === '' || newContent === '') {
+    if (noteData.title === '' || noteData.content === '') {
       return;
     }
 
-    updateNote(id, newTitle, newContent, false);
+    updateNote(id, noteData.title, noteData.content, false);
   };
 
   return (
@@ -20,17 +29,21 @@ const NoteEditForm = ({ id, title, content, updateNote }) => {
       <input
         className="note__modify__title"
         type="text"
-        value={newTitle}
+        value={noteData.title}
         name="title"
-        onChange={(e) => setNewTitle(e.target.value)}
+        onChange={onInputChange}
+        title="Title"
       />
       <textarea
         className="note__modify__content"
         name="content"
-        value={newContent}
-        onChange={(e) => setNewContent(e.target.value)}
+        value={noteData.content}
+        onChange={onInputChange}
+        title="Content"
       />
-      <button className="btn--save__note">Save</button>
+      <button className="btn--save__note" name="save-note-btn" title="Save">
+        Save
+      </button>
     </form>
   );
 };

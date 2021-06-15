@@ -17,7 +17,7 @@ const TvShowsForm = ({ onSearch }) => {
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
-        <button className="input__tvShow__submit btn--icon">
+        <button className="input__tvShow__submit btn--icon" name="search-TvShow" title="Search">
           <SearchIcon />
         </button>
       </div>

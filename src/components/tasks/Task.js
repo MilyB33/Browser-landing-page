@@ -9,7 +9,12 @@ const Task = ({ task: { id, title, time }, deleteTask }) => {
       <h3 className="task__title">{title}</h3>
       <time className="task__time">{time}</time>
       <div className="task__controls">
-        <button className="btn--icon" onClick={() => deleteTask(id)}>
+        <button
+          className="btn--icon"
+          onClick={() => deleteTask(id)}
+          name="delete-task"
+          title="Delete"
+        >
           <DeleteIcon />
         </button>
       </div>

@@ -4,7 +4,7 @@ import {
   TOGGLE_OPTIONS,
   TOGGLE_COLORS,
   TOGGLE_BOOKMARKS,
-  TOGGLE_ADD,
+  TOGGLE_ABOUT,
   TOGGLE_TASKS,
   TOGGLE_TVSHOWS,
   TOGGLE_SITES,
@@ -34,7 +34,7 @@ export default (state, action) => {
           showOptions: false,
           showColors: false,
           showBookmarks: false,
-          showAdd: false,
+          showAbout: false,
         },
       };
     }
@@ -46,7 +46,7 @@ export default (state, action) => {
           showOptions: true,
           showColors: false,
           showBookmarks: false,
-          showAdd: false,
+          showAbout: false,
         },
       };
 
@@ -58,7 +58,7 @@ export default (state, action) => {
           showOptions: false,
           showColors: true,
           showBookmarks: false,
-          showAdd: false,
+          showAbout: false,
         },
       };
     case TOGGLE_BOOKMARKS:
@@ -69,10 +69,10 @@ export default (state, action) => {
           showOptions: false,
           showColors: false,
           showBookmarks: true,
-          showAdd: false,
+          showAbout: false,
         },
       };
-    case TOGGLE_ADD:
+    case TOGGLE_ABOUT:
       return {
         ...state,
         navDisplays: {
@@ -80,7 +80,7 @@ export default (state, action) => {
           showOptions: false,
           showColors: false,
           showBookmarks: false,
-          showAdd: true,
+          showAbout: true,
         },
       };
     case GET_WIDGETS:

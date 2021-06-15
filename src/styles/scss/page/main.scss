@@ -19,8 +19,8 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10vh 50vh 25vh repeat(4, minmax(0vh, 50vh));
-  gap: 5rem;
+  grid-template-rows: 15vh 45vh 30vh repeat(4, minmax(0vh, 50vh));
+  gap: 2rem;
 
   @media (min-width: 800px) {
     grid-template-columns: repeat(4, 1fr);

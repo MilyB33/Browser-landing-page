@@ -8,7 +8,7 @@ import {
   TOGGLE_OPTIONS,
   TOGGLE_COLORS,
   TOGGLE_BOOKMARKS,
-  TOGGLE_ADD,
+  TOGGLE_ABOUT,
   TOGGLE_TASKS,
   TOGGLE_TVSHOWS,
   TOGGLE_SITES,
@@ -30,7 +30,7 @@ const NavigationState = (props) => {
       showOptions: false,
       showColors: false,
       showBookmarks: false,
-      showAdd: false,
+      showAbout: false,
     },
 
     widgetsDisplays: {
@@ -65,7 +65,7 @@ const NavigationState = (props) => {
 
   const toggleBookmarks = () => dispatch({ type: TOGGLE_BOOKMARKS });
 
-  const toggleAdd = () => dispatch({ type: TOGGLE_ADD });
+  const toggleAbout = () => dispatch({ type: TOGGLE_ABOUT });
 
   const toggleAll = () => dispatch({ type: TOGGLE_ALL });
 
@@ -88,13 +88,16 @@ const NavigationState = (props) => {
   const getBookmarks = () => dispatch({ type: GET_BOOKMARKS });
 
   const addBookmark = (url, name) => {
+    let domain = new URL(url);
+    domain = domain.hostname;
+    console.log(domain);
     dispatch({
       type: ADD_BOOKMARK,
       payload: {
         id: uuidv4(),
         name,
-        url,
-        icon: `${url}/favicon.ico`,
+        url: `https://${domain}`,
+        icon: `https://${domain}/favicon.ico`,
       },
     });
   };
@@ -133,7 +136,7 @@ const NavigationState = (props) => {
         toggleDefault,
         toggleColors,
         toggleBookmarks,
-        toggleAdd,
+        toggleAbout,
         toggleTasks,
         toggleTvShows,
         toggleSites,

@@ -27,7 +27,7 @@ input:focus,
 textarea:focus,
 select:focus,
 button:focus {
-  box-shadow: 0 0 8px 8px #dad4d4;
+  box-shadow: inset 0 0 4px 4px #dad4d4;
 }
 
 input::placeholder {
@@ -426,20 +426,21 @@ button {
   }
 }
 
-.tasks__form {
+.tasks__controls {
   display: flex;
   margin: 1rem 0;
   border: 2px solid #fff;
-  padding: 0.5rem;
 }
 
 .input__task__title {
-  width: 75%;
+  flex-grow: 2;
+  padding: 0.5rem;
 }
 
 .input__task__time {
-  width: 15%;
+  flex-grow: 2;
   text-align: center;
+  padding: 0.5rem;
 }
 
 .input__task__btn {
@@ -735,14 +736,26 @@ button {
 }
 
 .bookmark {
+  font-size: 1.5em;
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  gap: 0.5rem;
+  gap: 2em;
+  border-bottom: 1px dashed #fff;
 }
 
 .bookmark__remove__btn {
   margin-right: auto;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+.about__description {
+  width: 80%;
 }
 
 .alert {
@@ -773,8 +786,8 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10vh 50vh 25vh repeat(4, minmax(0vh, 50vh));
-  gap: 5rem;
+  grid-template-rows: 15vh 45vh 30vh repeat(4, minmax(0vh, 50vh));
+  gap: 2rem;
 }
 @media (min-width: 800px) {
   .container__grid {

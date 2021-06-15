@@ -18,6 +18,7 @@ const Options = () => {
 
   return (
     <SubMenus>
+      <h1>Options :</h1>
       <Option text="Toggle Notes" name="notes" onToggle={toggleNotes} isShow={showNotes} />
       <Option text="Toggle Crypto" name="crypto" onToggle={toggleCrypto} isShow={showCrypto} />
       <Option text="Toggle Daily Tasks" name="tasks" onToggle={toggleTasks} isShow={showTasks} />

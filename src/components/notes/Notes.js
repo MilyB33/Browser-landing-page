@@ -27,7 +27,7 @@ const Notes = () => {
     <section className="notes container--widget">
       <h1>My Notes :</h1>
 
-      <button className="btn--icon" onClick={addNote}>
+      <button className="btn--icon" onClick={addNote} name="add-note" title="Add Note">
         <AddIcon />
       </button>
 

@@ -11,10 +11,20 @@ const SubMenus = ({ onSubmit, children }) => {
   return (
     <section className="container__subMenu">
       <div className="subMenu__controls">
-        <button className="subMenu__control__btn btn--icon" title="Go Back" onClick={toggleDefault}>
+        <button
+          className="subMenu__control__btn btn--icon"
+          title="Go Back"
+          onClick={toggleDefault}
+          name="back-btn"
+        >
           <GoBackIcon />
         </button>
-        <button className="subMenu__control__btn btn--icon" title="Close Menu" onClick={toggleNav}>
+        <button
+          className="subMenu__control__btn btn--icon"
+          title="Close Menu"
+          onClick={toggleNav}
+          name="close-menu"
+        >
           <CloseIcon />
         </button>
       </div>

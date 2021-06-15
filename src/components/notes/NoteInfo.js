@@ -8,7 +8,12 @@ const NoteInfo = ({ id, title, content, toggleEdit, removeNote }) => {
       <h3 className="note__title">
         {title}
 
-        <button className="note__delete__btn btn--icon" onClick={() => removeNote(id)}>
+        <button
+          className="note__delete__btn btn--icon"
+          onClick={() => removeNote(id)}
+          name="delete-note"
+          title="Delete"
+        >
           <DeleteIcon />
         </button>
       </h3>

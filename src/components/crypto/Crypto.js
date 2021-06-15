@@ -19,10 +19,6 @@ const Crypto = () => {
     setPrice(actualCoin.current_price);
   }, [actualCoin]);
 
-  const onChange = (event) => {
-    getActualCoin(event.target.value);
-  };
-
   if (loading)
     return (
       <section className="crypto">
@@ -39,7 +35,12 @@ const Crypto = () => {
   return (
     <section className="container__widget crypto">
       <h1>Actual Cryptocurrency Price :</h1>
-      <select name="coins" className="crypto__select" onChange={onChange} value={actualCoin.id}>
+      <select
+        name="coins"
+        className="crypto__select"
+        onChange={(event) => getActualCoin(event.target.value)}
+        value={actualCoin.id}
+      >
         {renderedCoinsList}
       </select>
       <h2 className="crypto__price">Price: {price} PLN</h2>
