@@ -59,10 +59,6 @@
   resize: none;
 }
 
-.btn--save__note {
+.save__note {
   @include push--auto;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid $clr-light-200;
-  border-radius: 0 0 0 0;
 }

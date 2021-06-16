@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { onRemoveAnim } from '../animations/Animations';
 import PropTypes from 'prop-types';
 
 import { FiDelete as DeleteIcon } from 'react-icons/all';
 
 const TvShow = ({ tvShow: { id, name, airDate }, removeSeries }) => {
+  const ref = useRef(null);
+
   return (
-    <tr className="tvShow__item">
+    <tr className="tvShow__item" ref={ref}>
       <td>
         <h4>{name}</h4>
       </td>
@@ -15,7 +18,7 @@ const TvShow = ({ tvShow: { id, name, airDate }, removeSeries }) => {
       <td>
         <button
           className=" btn--icon"
-          onClick={() => removeSeries(id)}
+          onClick={() => onRemoveAnim(ref.current, removeSeries, id)}
           name="delete-TvShow"
           title="Delete"
         >

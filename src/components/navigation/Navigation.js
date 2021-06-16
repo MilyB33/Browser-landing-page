@@ -1,11 +1,12 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import gsap from 'gsap';
 import {
   FaCog as CogIcon,
   BsBookmarks as BookmarkIcon,
   AiOutlinePlusCircle as PlusIcon,
   BiPalette as PaletteIcon,
 } from 'react-icons/all';
+
+import { onOpenNav } from '../animations/Animations';
 
 import NavigationQuarter from './NavigationQuarter';
 import Options from './subMenus/Options';
@@ -27,8 +28,7 @@ const Navigation = () => {
   const { showDefault, showOptions, showColors, showBookmarks, showAbout } = navDisplays;
 
   useEffect(() => {
-    gsap.fromTo(ref.current, { opacity: 0 }, { opacity: 1, duration: 1 });
-    console.log(ref);
+    onOpenNav(ref.current);
     // eslint-disable-next-line
   }, []);
 

@@ -62,7 +62,7 @@ const Bookmarks = () => {
         required
       />
 
-      <button className="bookmarks__submit" name="add-site" title="Add Site">
+      <button className="bookmarks__submit btn--default" name="add-site" title="Add Site">
         Add Site
       </button>
 

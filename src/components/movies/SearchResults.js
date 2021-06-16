@@ -30,7 +30,7 @@ const SearchResults = ({ tvShowsList, onSubmit }) => {
 };
 
 SearchResult.propTypes = {
-  tvShowsList: PropTypes.array.isRequired,
+  tvShowsList: PropTypes.array,
   onSubmit: PropTypes.func.isRequired,
 };
 

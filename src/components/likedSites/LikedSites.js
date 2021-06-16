@@ -14,6 +14,7 @@ const LikedSites = () => {
     speed: 500,
     slidesToShow: bookmarks.length < 4 ? bookmarks.length : 4,
     autoplay: true,
+    variableWidth: false,
   };
 
   const renderedBookmarks = bookmarks.map(({ id, url, icon, name }) => {

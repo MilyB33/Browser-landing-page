@@ -42,6 +42,15 @@ button {
   line-height: 0;
 }
 
+.btn--default {
+  padding: 0.5em;
+  border: 2px solid #fff;
+  transition: 0.3s;
+}
+.btn--default:hover {
+  background: #343131;
+}
+
 .form--empty {
   border-color: #e63946 !important;
 }
@@ -606,13 +615,9 @@ button {
   resize: none;
 }
 
-.btn--save__note {
+.save__note {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #dad4d4;
-  border-radius: 0 0 0 0;
 }
 
 .crypto {
@@ -683,6 +688,7 @@ button {
   text-align: center;
   background: #9fa0ff;
   overflow-y: auto;
+  opacity: 0;
 }
 
 .subMenu__control__btn {
@@ -732,12 +738,6 @@ button {
 
 .bookmarks__submit {
   margin: 1rem;
-  padding: 0.5em;
-  border: 2px solid #fff;
-  transition: 0.3s;
-}
-.bookmarks__submit:hover {
-  background: #343131;
 }
 
 .bookmark {

@@ -7,6 +7,7 @@
   text-align: center;
   background: $clr-additional-100;
   overflow-y: auto;
+  opacity: 0;
 }
 
 .subMenu__control__btn {
@@ -58,13 +59,6 @@
 
 .bookmarks__submit {
   margin: 1rem;
-  padding: 0.5em;
-  border: 2px solid $clr-light-100;
-  transition: 0.3s;
-
-  &:hover {
-    background: $clr-dark-100;
-  }
 }
 
 .bookmark {

@@ -43,7 +43,7 @@ const NoteEditForm = ({ id, title, content, updateNote }) => {
         title="Content"
         required
       />
-      <button className="btn--save__note" name="save-note-btn" title="Save">
+      <button className="save__note btn--default" name="save-note-btn" title="Save">
         Save
       </button>
     </form>

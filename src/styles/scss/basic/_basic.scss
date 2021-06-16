@@ -43,6 +43,16 @@ button {
   line-height: 0;
 }
 
+.btn--default {
+  padding: 0.5em;
+  border: 2px solid $clr-light-100;
+  transition: 0.3s;
+
+  &:hover {
+    background: $clr-dark-100;
+  }
+}
+
 .form--empty {
   border-color: #e63946 !important;
 }

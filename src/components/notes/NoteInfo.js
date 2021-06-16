@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { onRemoveAnim } from '../animations/Animations';
 import { MdDeleteForever as DeleteIcon } from 'react-icons/all';
 import PropTypes from 'prop-types';
 
 const NoteInfo = ({ id, title, content, toggleEdit, removeNote }) => {
+  const ref = useRef(null);
+
   return (
-    <article className="note" onDoubleClick={() => toggleEdit(id, true)}>
+    <article className="note" onDoubleClick={() => toggleEdit(id, true)} ref={ref}>
       <h3 className="note__title">
         {title}
 
         <button
           className="note__delete__btn btn--icon"
-          onClick={() => removeNote(id)}
+          onClick={() => onRemoveAnim(ref.current, removeNote, id)}
           name="delete-note"
           title="Delete"
         >
