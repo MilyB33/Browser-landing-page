@@ -23,6 +23,10 @@ const Bookmarks = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     navigationContext.addBookmark(url, name);
+    setBookmark({
+      url: '',
+      name: '',
+    });
   };
 
   const onDelete = (event, id) => {

@@ -32,6 +32,7 @@ const TasksForm = ({ onFormSubmit }) => {
           className="input__task__title"
           onChange={onInputChange}
           value={title}
+          required
         />
         <input
           type="time"
@@ -39,6 +40,7 @@ const TasksForm = ({ onFormSubmit }) => {
           className="input__task__time"
           onChange={onInputChange}
           value={time}
+          required
         />
         <button className="input__task__btn btn--icon" name="add-task" title="Add Task">
           <AddIcon />

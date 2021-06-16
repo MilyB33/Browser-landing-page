@@ -257,6 +257,7 @@ button {
   transform: translate(-50%, -50%);
   width: 35rem;
   height: 35rem;
+  opacity: 0;
 }
 @media (min-width: 500px) {
   .navigation {
@@ -456,14 +457,18 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 2px solid #fff;
+  border-left: 2px solid #fff;
+  background: rgba(126, 126, 129, 0.5);
   padding: 0.5rem;
   margin: 2rem 0.5rem;
 }
 
-.task__title,
+.task__title {
+  width: 70%;
+}
+
 .task__time {
-  width: 100%;
+  width: 20%;
 }
 
 .task__time {
@@ -744,8 +749,13 @@ button {
   border-bottom: 1px dashed #fff;
 }
 
+.bookmark__icon {
+  width: 2rem;
+  height: 2rem;
+}
+
 .bookmark__remove__btn {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 .about {

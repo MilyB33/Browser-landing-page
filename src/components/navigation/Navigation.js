@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
+import gsap from 'gsap';
 import {
   FaCog as CogIcon,
   BsBookmarks as BookmarkIcon,
@@ -18,14 +19,21 @@ import NavigationContext from '../../context/navigation/navigationContext';
 
 const Navigation = () => {
   const navigationContext = useContext(NavigationContext);
+  const ref = useRef(null);
 
   const { toggleNav, toggleOptions, toggleColors, toggleBookmarks, toggleAbout, navDisplays } =
     navigationContext;
 
   const { showDefault, showOptions, showColors, showBookmarks, showAbout } = navDisplays;
 
+  useEffect(() => {
+    gsap.fromTo(ref.current, { opacity: 0 }, { opacity: 1, duration: 1 });
+    console.log(ref);
+    // eslint-disable-next-line
+  }, []);
+
   return (
-    <nav className="navigation">
+    <nav className="navigation" ref={ref}>
       <NavigationQuarter additionalClass="--top__left" onToggle={toggleOptions}>
         <CogIcon className="navigation__icon navigation__icon--cog" />
       </NavigationQuarter>

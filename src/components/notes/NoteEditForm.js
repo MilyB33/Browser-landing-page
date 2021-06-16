@@ -33,6 +33,7 @@ const NoteEditForm = ({ id, title, content, updateNote }) => {
         name="title"
         onChange={onInputChange}
         title="Title"
+        required
       />
       <textarea
         className="note__modify__content"
@@ -40,6 +41,7 @@ const NoteEditForm = ({ id, title, content, updateNote }) => {
         value={noteData.content}
         onChange={onInputChange}
         title="Content"
+        required
       />
       <button className="btn--save__note" name="save-note-btn" title="Save">
         Save

@@ -16,15 +16,19 @@ const CryptoState = (props) => {
   const [state, dispatch] = useReducer(CrytpoReducer, initialState);
 
   const getCoins = async () => {
-    const res = await fetch(URL, {
-      method: 'GET',
-    });
-    const data = await res.json();
+    try {
+      const res = await fetch(URL, {
+        method: 'GET',
+      });
+      const data = await res.json();
 
-    dispatch({
-      type: GET_COINS,
-      payload: data,
-    });
+      dispatch({
+        type: GET_COINS,
+        payload: data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const getActualCoin = (id) => {

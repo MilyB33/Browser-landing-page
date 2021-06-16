@@ -50,14 +50,18 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 2px solid $clr-light-100;
+  border-left: 2px solid $clr-light-100;
+  background: hsla(240, 1%, 50%, 0.5);
   padding: 0.5rem;
   margin: 2rem 0.5rem;
 }
 
-.task__title,
+.task__title {
+  width: 70%;
+}
+
 .task__time {
-  width: 100%;
+  width: 20%;
 }
 
 .task__time {

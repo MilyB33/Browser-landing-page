@@ -76,8 +76,13 @@
   border-bottom: 1px dashed $clr-light-100;
 }
 
+.bookmark__icon {
+  width: 2rem;
+  height: 2rem;
+}
+
 .bookmark__remove__btn {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 // About
