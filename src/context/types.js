@@ -1,10 +1,14 @@
 export const ADD_SERIES = 'ADD_SERIES';
 export const GET_SERIES = 'GET_SERIES';
 export const REMOVE_SERIES = 'REMOVE_SERIES';
+export const SEARCH_SERIES = 'SEARCH_SERIES';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+export const SET_ERROR_SERIES = 'SET_ERROR_SERIES';
 export const ADD_TASK = 'ADD_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
 export const GET_TASKS = 'GET_TASKS';
 export const GET_COINS = 'GET_COINS';
+export const SET_ERROR_COINS = 'SET_ERROR_COINS';
 export const ACTUAL_COIN = 'ACTUAL_COIN';
 export const TOGGLE_NAV = 'TOGGLE_NAV';
 export const TOGGLE_DEFAULT = 'TOGGLE_DEFAULT';

@@ -6,8 +6,13 @@ import PropTypes from 'prop-types';
 const TvShowsForm = ({ onSearch }) => {
   const [text, setText] = useState('');
 
+  const onSubmit = (event) => {
+    event.preventDefault();
+    onSearch(text);
+  };
+
   return (
-    <form onSubmit={(event) => onSearch(event, text, setText)}>
+    <form onSubmit={onSubmit}>
       <div className="premieres__controls">
         <input
           list="tvShows"
@@ -18,7 +23,11 @@ const TvShowsForm = ({ onSearch }) => {
           onChange={(event) => setText(event.target.value)}
           required
         />
-        <button className="input__tvShow__submit btn--icon" name="search-TvShow" title="Search">
+        <button
+          className="input__tvShow__submit btn--icon"
+          name="search-TvShow"
+          title="Search"
+        >
           <SearchIcon />
         </button>
       </div>

@@ -1,13 +1,14 @@
 import React, { useReducer } from 'react';
 import CryptoContext from './cryptoContext';
 import CrytpoReducer from './cryptoReducer';
-import { GET_COINS, ACTUAL_COIN } from '../types';
+import { GET_COINS, ACTUAL_COIN, SET_ERROR_COINS } from '../types';
 
 const CryptoState = (props) => {
   const initialState = {
     coins: [],
     actualCoin: {},
     loading: true,
+    error: false,
   };
 
   const URL =
@@ -20,6 +21,7 @@ const CryptoState = (props) => {
       const res = await fetch(URL, {
         method: 'GET',
       });
+
       const data = await res.json();
 
       dispatch({
@@ -27,7 +29,11 @@ const CryptoState = (props) => {
         payload: data,
       });
     } catch (err) {
-      console.log(err);
+      console.warn(err.message);
+
+      dispatch({
+        type: SET_ERROR_COINS,
+      });
     }
   };
 
@@ -44,6 +50,7 @@ const CryptoState = (props) => {
         coins: state.coins,
         actualCoin: state.actualCoin,
         loading: state.loading,
+        error: state.error,
         getCoins,
         getActualCoin,
       }}

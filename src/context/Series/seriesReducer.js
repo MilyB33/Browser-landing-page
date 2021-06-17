@@ -1,4 +1,11 @@
-import { ADD_SERIES, REMOVE_SERIES, GET_SERIES } from '../types';
+import {
+  ADD_SERIES,
+  REMOVE_SERIES,
+  GET_SERIES,
+  SEARCH_SERIES,
+  CLEAR_SEARCH,
+  SET_ERROR_SERIES,
+} from '../types';
 // eslint-disable-next-line
 export default (state, action) => {
   switch (action.type) {
@@ -11,7 +18,9 @@ export default (state, action) => {
       localStorage.setItem(
         'TvShows',
         JSON.stringify(
-          [...state.series, action.payload].sort((a, b) => (a.airDate > b.airDate && 1) || -1)
+          [...state.series, action.payload].sort(
+            (a, b) => (a.airDate > b.airDate && 1) || -1
+          )
         )
       );
       return {
@@ -23,11 +32,30 @@ export default (state, action) => {
     case REMOVE_SERIES:
       localStorage.setItem(
         'TvShows',
-        JSON.stringify(state.series.filter((show) => show.id !== action.payload))
+        JSON.stringify(
+          state.series.filter((show) => show.id !== action.payload)
+        )
       );
       return {
         ...state,
-        series: state.series.filter((show) => show.id !== action.payload),
+        series: state.series.filter(
+          (show) => show.id !== action.payload
+        ),
+      };
+    case SEARCH_SERIES:
+      return {
+        ...state,
+        searchResults: action.payload,
+      };
+    case CLEAR_SEARCH:
+      return {
+        ...state,
+        searchResults: [],
+      };
+    case SET_ERROR_SERIES:
+      return {
+        ...state,
+        error: true,
       };
     default:
       return state;

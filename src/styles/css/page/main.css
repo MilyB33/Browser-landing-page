@@ -768,26 +768,6 @@ button {
   width: 80%;
 }
 
-.alert {
-  text-align: center;
-  border: 2px solid #fff;
-  margin: 0 2rem;
-  padding: 0.5rem;
-  background: yellow;
-}
-
-.dangerous {
-  background: #e63946;
-}
-
-.good {
-  background: #55a630;
-}
-
-.warn {
-  background: #f8961e;
-}
-
 body {
   background: linear-gradient(45deg, #e855e9, #7e89c1, #00d4ff);
 }
