@@ -6,7 +6,14 @@ import NotesContext from '../../context/notes/notesContext';
 
 const Notes = () => {
   const notesContext = useContext(NotesContext);
-  const { getNotes, addNote, notes, toggleEdit, removeNote, updateNote } = notesContext;
+  const {
+    getNotes,
+    addNote,
+    notes,
+    toggleEdit,
+    removeNote,
+    updateNote,
+  } = notesContext;
 
   useEffect(() => {
     getNotes();
@@ -24,10 +31,15 @@ const Notes = () => {
   ));
 
   return (
-    <section className="notes container--widget">
+    <section className="notes container--widget container--widget__background">
       <h1>My Notes :</h1>
 
-      <button className="btn--icon" onClick={addNote} name="add-note" title="Add Note">
+      <button
+        className="btn--icon"
+        onClick={addNote}
+        name="add-note"
+        title="Add Note"
+      >
         <AddIcon />
       </button>
 

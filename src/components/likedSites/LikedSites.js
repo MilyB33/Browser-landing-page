@@ -17,17 +17,19 @@ const LikedSites = () => {
     variableWidth: false,
   };
 
-  const renderedBookmarks = bookmarks.map(({ id, url, icon, name }) => {
-    return (
-      <a key={id} href={url} className="sites__item" title={name}>
-        <img src={icon} alt="site icon" className="sites__icon" />
-        <p>{name}</p>
-      </a>
-    );
-  });
+  const renderedBookmarks = bookmarks.map(
+    ({ id, url, icon, name }) => {
+      return (
+        <a key={id} href={url} className="sites__item" title={name}>
+          <img src={icon} alt="site icon" className="sites__icon" />
+          <p>{name}</p>
+        </a>
+      );
+    }
+  );
 
   return (
-    <section className="container--widget sites">
+    <section className="container--widget container--widget__background sites">
       <h1>Liked Sites</h1>
       <Slider {...settings} className="sites__slider">
         {renderedBookmarks}

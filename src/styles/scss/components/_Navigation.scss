@@ -9,7 +9,13 @@
   align-items: center;
   font-size: 3em;
   border-radius: 50%;
-  background-color: $clr-dark-100;
+  background-color: $clr-dark-200;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $clr-light-100;
+    color: invert($clr-light-100);
+  }
 
   @media (min-width: 500px) {
     width: 3em;

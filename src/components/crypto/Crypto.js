@@ -43,14 +43,14 @@ const Crypto = () => {
   ));
 
   return (
-    <section className="container--widget crypto">
+    <section className="container--widget container--widget__background crypto">
       {error || (
         <Fragment>
           {loading ? (
             <Spinner />
           ) : (
             <Fragment>
-              <h1>Actual Cryptocurrency Price :</h1>
+              <h2>Actual Cryptocurrency Price :</h2>
               <select
                 name="coins"
                 className="crypto__select"

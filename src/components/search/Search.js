@@ -6,9 +6,13 @@ import NavigationButton from '../navigation/NavigationButton';
 
 const Search = () => {
   return (
-    <section className="search container--widget">
+    <section className="search container--widget container--widget__background">
       <Socials />
-      <form method="GET" action="https://www.google.pl/search" className="search__form">
+      <form
+        method="GET"
+        action="https://www.google.pl/search"
+        className="search__form"
+      >
         <input
           name="q"
           type="text"
