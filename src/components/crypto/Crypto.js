@@ -1,10 +1,22 @@
-import React, { useState, useContext, useEffect, Fragment } from 'react';
+import React, {
+  useState,
+  useContext,
+  useEffect,
+  Fragment,
+} from 'react';
 import CryptoContext from '../../context/Cryptocurrency/cryptoContext';
 import Spinner from '../layout/Spinner';
 
 const Crypto = () => {
   const cryptoContext = useContext(CryptoContext);
-  const { coins, getCoins, getActualCoin, actualCoin, loading, error } = cryptoContext;
+  const {
+    coins,
+    getCoins,
+    getActualCoin,
+    actualCoin,
+    loading,
+    error,
+  } = cryptoContext;
 
   // Need to be local state because can't pass object to option value
   const [price, setPrice] = useState('');
@@ -20,13 +32,18 @@ const Crypto = () => {
   }, [actualCoin]);
 
   const renderedCoinsList = coins.map((coin) => (
-    <option key={coin.id} name="cryptocurrency__name" value={coin.id} className="crypto__option">
+    <option
+      key={coin.id}
+      name="cryptocurrency__name"
+      value={coin.id}
+      className="crypto__option"
+    >
       {coin.name}
     </option>
   ));
 
   return (
-    <section className="container__widget crypto">
+    <section className="container--widget crypto">
       {error || (
         <Fragment>
           {loading ? (
@@ -37,7 +54,9 @@ const Crypto = () => {
               <select
                 name="coins"
                 className="crypto__select"
-                onChange={(event) => getActualCoin(event.target.value)}
+                onChange={(event) =>
+                  getActualCoin(event.target.value)
+                }
                 value={actualCoin.id}
               >
                 {renderedCoinsList}

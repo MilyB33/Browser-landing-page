@@ -91,3 +91,19 @@
     width: 80%;
   }
 }
+
+// Colors
+
+.color__box {
+  padding: 1rem 0;
+  border-bottom: 2px solid $clr-light-100;
+}
+
+.color__title {
+  max-width: 70%;
+  text-align: left;
+}
+
+.colors__default {
+  margin-top: 1rem;
+}

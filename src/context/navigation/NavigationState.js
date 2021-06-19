@@ -20,6 +20,8 @@ import {
   TOGGLE_COLOR,
   GET_BOOKMARKS,
   GET_WIDGETS,
+  SET_DEFAULT_COLORS,
+  GET_COLORS,
 } from '../types';
 
 const NavigationState = (props) => {
@@ -44,14 +46,17 @@ const NavigationState = (props) => {
 
     bookmarks: [],
     colors: {
-      fontColor: '#ffffff',
-      firstBgColor: '#e855e9',
-      secondBgColor: '#7e89c1',
-      thirdBgColor: '#00d4ff',
+      fontColor: null,
+      firstBgColor: null,
+      secondBgColor: null,
+      thirdBgColor: null,
     },
   };
 
-  const [state, dispatch] = useReducer(NavigationReducer, initialState);
+  const [state, dispatch] = useReducer(
+    NavigationReducer,
+    initialState
+  );
 
   // Function for control the changing navigation window
 
@@ -89,8 +94,9 @@ const NavigationState = (props) => {
 
   const addBookmark = (url, name) => {
     let domain = new URL(url);
+
     domain = domain.hostname;
-    console.log(domain);
+
     dispatch({
       type: ADD_BOOKMARK,
       payload: {
@@ -102,24 +108,43 @@ const NavigationState = (props) => {
     });
   };
 
-  const removeBookmark = (id) => dispatch({ type: REMOVE_BOOKMARK, payload: id });
+  const removeBookmark = (id) =>
+    dispatch({ type: REMOVE_BOOKMARK, payload: id });
 
   // Colors
 
-  const toggleColor = (value, name) => {
+  const getColors = () => {
+    dispatch({ type: GET_COLORS });
+  };
+
+  const toggleColor = (value, name, id) => {
+    id || (id = name);
     switch (name) {
       case 'fontColor':
-        console.log('A');
         document.body.style.color = value;
         break;
-      case 'firstBgColor':
+      case 'bgColor':
         document.body.style.background = `linear-gradient(45deg, ${state.colors.firstBgColor}, ${state.colors.secondBgColor}, ${state.colors.thirdBgColor})`;
         break;
       default:
         break;
     }
 
-    dispatch({ type: TOGGLE_COLOR, payload: { value, name } });
+    dispatch({ type: TOGGLE_COLOR, payload: { value, id } });
+  };
+
+  const setDefaultColors = () => {
+    dispatch({
+      type: SET_DEFAULT_COLORS,
+      payload: {
+        fontColor: '#ffffff',
+        firstBgColor: '#e855e9',
+        secondBgColor: '#7e89c1',
+        thirdBgColor: '#00d4ff',
+      },
+    });
+
+    document.body.style.background = `linear-gradient(45deg, ${state.colors.firstBgColor}, ${state.colors.secondBgColor}, ${state.colors.thirdBgColor})`;
   };
 
   return (
@@ -146,7 +171,9 @@ const NavigationState = (props) => {
         addBookmark,
         removeBookmark,
         toggleAll,
+        getColors,
         toggleColor,
+        setDefaultColors,
       }}
     >
       {props.children}

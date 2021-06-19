@@ -15,14 +15,30 @@ const Home = () => {
 
   const {
     showNav,
+    getColors,
     getWidgets,
-    widgetsDisplays: { showTasks, showTvShows, showNotes, showSites, showCrypto },
+    widgetsDisplays: {
+      showTasks,
+      showTvShows,
+      showNotes,
+      showSites,
+      showCrypto,
+    },
+    colors,
   } = navigationContext;
 
   useEffect(() => {
     getWidgets();
-    // eslint-disable-next-line
+    getColors();
+    //eslint-disable-next-line
   }, []);
+
+  // Must be here because if colors are loaded it will updates bg
+  useEffect(() => {
+    document.body.style.color = colors.fontColor;
+    document.body.style.background = `linear-gradient(45deg, ${colors.firstBgColor}, ${colors.secondBgColor}, ${colors.thirdBgColor})`;
+    // eslint-disable-next-line
+  }, [colors]);
 
   return (
     <main className="container__grid">

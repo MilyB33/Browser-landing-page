@@ -16,6 +16,8 @@ import {
   TOGGLE_COLOR,
   GET_BOOKMARKS,
   GET_WIDGETS,
+  SET_DEFAULT_COLORS,
+  GET_COLORS,
 } from '../types';
 // eslint-disable-next-line
 export default (state, action) => {
@@ -168,10 +170,14 @@ export default (state, action) => {
     case GET_BOOKMARKS:
       return {
         ...state,
-        bookmarks: JSON.parse(localStorage.getItem('Bookmarks')) || [],
+        bookmarks:
+          JSON.parse(localStorage.getItem('Bookmarks')) || [],
       };
     case ADD_BOOKMARK:
-      localStorage.setItem('Bookmarks', JSON.stringify([...state.bookmarks, action.payload]));
+      localStorage.setItem(
+        'Bookmarks',
+        JSON.stringify([...state.bookmarks, action.payload])
+      );
       return {
         ...state,
         bookmarks: [...state.bookmarks, action.payload],
@@ -179,18 +185,54 @@ export default (state, action) => {
     case REMOVE_BOOKMARK:
       localStorage.setItem(
         'Bookmarks',
-        JSON.stringify(state.bookmarks.filter((bookmark) => bookmark.id !== action.payload))
+        JSON.stringify(
+          state.bookmarks.filter(
+            (bookmark) => bookmark.id !== action.payload
+          )
+        )
       );
       return {
         ...state,
-        bookmarks: state.bookmarks.filter((bookmark) => bookmark.id !== action.payload),
+        bookmarks: state.bookmarks.filter(
+          (bookmark) => bookmark.id !== action.payload
+        ),
+      };
+    case GET_COLORS:
+      return {
+        ...state,
+        ...JSON.parse(localStorage.getItem('Colors')),
       };
     case TOGGLE_COLOR:
+      localStorage.setItem(
+        'Colors',
+        JSON.stringify({
+          colors: {
+            ...state.colors,
+            [action.payload.id]: action.payload.value,
+          },
+        })
+      );
       return {
         ...state,
         colors: {
           ...state.colors,
-          [action.payload.name]: action.payload.value,
+          [action.payload.id]: action.payload.value,
+        },
+      };
+    case SET_DEFAULT_COLORS:
+      localStorage.setItem(
+        'Colors',
+        JSON.stringify({
+          colors: {
+            ...state.colors,
+            ...action.payload,
+          },
+        })
+      );
+      return {
+        ...state,
+        colors: {
+          ...action.payload,
         },
       };
     default:

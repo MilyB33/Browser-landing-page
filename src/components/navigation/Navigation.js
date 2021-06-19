@@ -22,10 +22,22 @@ const Navigation = () => {
   const navigationContext = useContext(NavigationContext);
   const ref = useRef(null);
 
-  const { toggleNav, toggleOptions, toggleColors, toggleBookmarks, toggleAbout, navDisplays } =
-    navigationContext;
+  const {
+    toggleNav,
+    toggleOptions,
+    toggleColors,
+    toggleBookmarks,
+    toggleAbout,
+    navDisplays,
+  } = navigationContext;
 
-  const { showDefault, showOptions, showColors, showBookmarks, showAbout } = navDisplays;
+  const {
+    showDefault,
+    showOptions,
+    showColors,
+    showBookmarks,
+    showAbout,
+  } = navDisplays;
 
   useEffect(() => {
     onOpenNav(ref.current);
@@ -34,16 +46,28 @@ const Navigation = () => {
 
   return (
     <nav className="navigation" ref={ref}>
-      <NavigationQuarter additionalClass="--top__left" onToggle={toggleOptions}>
+      <NavigationQuarter
+        additionalClass="--top__left"
+        onToggle={toggleOptions}
+      >
         <CogIcon className="navigation__icon navigation__icon--cog" />
       </NavigationQuarter>
-      <NavigationQuarter additionalClass="--top__right" onToggle={toggleBookmarks}>
+      <NavigationQuarter
+        additionalClass="--top__right"
+        onToggle={toggleBookmarks}
+      >
         <BookmarkIcon className="navigation__icon navigation__icon--bookmark" />
       </NavigationQuarter>
-      <NavigationQuarter additionalClass="--bottom__right" onToggle={toggleAbout}>
+      <NavigationQuarter
+        additionalClass="--bottom__right"
+        onToggle={toggleAbout}
+      >
         <PlusIcon className="navigation__icon navigation__icon--plus" />
       </NavigationQuarter>
-      <NavigationQuarter additionalClass="--bottom__left" onToggle={toggleColors}>
+      <NavigationQuarter
+        additionalClass="--bottom__left"
+        onToggle={toggleColors}
+      >
         <PaletteIcon className="navigation__icon navigation__icon--palette" />
       </NavigationQuarter>
 
