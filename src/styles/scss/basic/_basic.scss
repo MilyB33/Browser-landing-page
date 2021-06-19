@@ -138,7 +138,10 @@ label {
   }
 }
 
+// Container
+
 .container--widget {
+  position: relative;
   padding: 1rem 2rem;
   overflow-y: auto;
   word-wrap: break-word; // optional if in the Tasks are long words
@@ -149,6 +152,23 @@ label {
     background-color: rgba($clr-dark-200, 0.5);
     border-radius: 15px;
     box-shadow: 2px 2px 4px $clr-dark-100;
+  }
+
+  &::-webkit-scrollbar {
+    overflow: hidden;
+    width: 10px;
+
+    &-track {
+      background: transparent;
+    }
+
+    &-thumb {
+      background: linear-gradient(
+        $clr-additional-200,
+        $clr-additional-100
+      );
+      border-radius: 15px;
+    }
   }
 }
 

@@ -11,6 +11,7 @@
   border-radius: 50%;
   background-color: $clr-dark-200;
   transition: 0.3s;
+  box-shadow: 0px 0px 8px $clr-additional-100;
 
   &:hover {
     background-color: $clr-light-100;

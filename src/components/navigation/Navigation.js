@@ -2,7 +2,7 @@ import React, { useContext, useRef, useEffect } from 'react';
 import {
   FaCog as CogIcon,
   BsBookmarks as BookmarkIcon,
-  AiOutlinePlusCircle as PlusIcon,
+  AiFillInfoCircle as InfoIcon,
   BiPalette as PaletteIcon,
 } from 'react-icons/all';
 
@@ -62,7 +62,7 @@ const Navigation = () => {
         additionalClass="--bottom__right"
         onToggle={toggleAbout}
       >
-        <PlusIcon className="navigation__icon navigation__icon--plus" />
+        <InfoIcon className="navigation__icon navigation__icon--plus" />
       </NavigationQuarter>
       <NavigationQuarter
         additionalClass="--bottom__left"
