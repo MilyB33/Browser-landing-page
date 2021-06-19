@@ -21,6 +21,7 @@ const Color = ({ text, name, onToggle, defaultColor, id }) => {
     return () => {
       clearTimeout(timeoutID);
     };
+    // eslint-disable-next-line
   }, [color]);
 
   return (
