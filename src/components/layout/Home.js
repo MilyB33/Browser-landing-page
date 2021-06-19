@@ -7,6 +7,7 @@ import TvShows from '../movies/TvShows';
 import Notes from '../notes/Notes';
 import Crypto from '../crypto/Crypto';
 import TimeWeather from '../time/TimeWeather';
+import storage from '../../context/storage/index';
 
 import NavigationContext from '../../context/navigation/navigationContext';
 
@@ -28,6 +29,7 @@ const Home = () => {
   } = navigationContext;
 
   useEffect(() => {
+    storage();
     getWidgets();
     getColors();
     //eslint-disable-next-line

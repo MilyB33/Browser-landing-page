@@ -36,12 +36,12 @@ const NavigationState = (props) => {
     },
 
     widgetsDisplays: {
-      showTasks: true,
-      showTvShows: true,
-      showSites: true,
-      showNotes: true,
-      showCrypto: true,
-      showAll: false,
+      showTasks: null,
+      showTvShows: null,
+      showSites: null,
+      showNotes: null,
+      showCrypto: null,
+      showAll: null,
     },
 
     bookmarks: [],
