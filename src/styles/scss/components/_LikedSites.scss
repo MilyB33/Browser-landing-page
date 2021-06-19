@@ -20,7 +20,7 @@
   &__slider {
     margin-top: 2rem;
     @include push--auto;
-    max-width: 30rem;
+    min-width: 80%;
 
     @media (min-width: 500px) {
       max-width: 40rem;
