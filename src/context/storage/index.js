@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 export default () => {
   if (!localStorage.getItem('TvShows'))
     localStorage.setItem('TvShows', JSON.stringify([]));
