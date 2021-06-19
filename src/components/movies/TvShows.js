@@ -24,7 +24,7 @@ const TvShows = () => {
   }, []);
 
   return (
-    <section className="premieres container--widget">
+    <section className="premieres container--widget container--widget__background">
       <h1>Tv Shows Premieres</h1>
       <TvShowsForm onSearch={searchSeries} />
       {error || (

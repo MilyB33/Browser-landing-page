@@ -130,6 +130,23 @@ button {
     font-size: 2rem;
   }
 }
+.container--widget {
+  padding: 1rem 2rem;
+  overflow-y: auto;
+  word-wrap: break-word;
+  margin: 10px;
+}
+.container--widget__background {
+  background-color: rgba(71, 66, 66, 0.5);
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px #343131;
+}
+
+.spinner {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .search {
   grid-row: 2/3;
   grid-column: 1/2;
@@ -179,6 +196,9 @@ button {
 .sites {
   grid-row: 3/4;
   grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 @media (min-width: 800px) {
   .sites {
@@ -209,7 +229,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background: rgba(52, 49, 49, 0.5);
+  background: rgba(24, 90, 219, 0.3);
   padding: 1rem;
   transition: 0.3s;
 }
@@ -218,7 +238,7 @@ button {
   width: 3rem;
 }
 .sites__item:hover {
-  background: rgba(52, 49, 49, 0.2);
+  background: rgba(159, 160, 255, 0.2);
 }
 
 .slick-slide > div {
@@ -244,7 +264,12 @@ button {
   align-items: center;
   font-size: 3em;
   border-radius: 50%;
-  background-color: #343131;
+  background-color: #474242;
+  transition: 0.3s;
+}
+.btn__navigation:hover {
+  background-color: #fff;
+  color: black;
 }
 @media (min-width: 500px) {
   .btn__navigation {
@@ -625,6 +650,7 @@ button {
   grid-row: 7/8;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
 }
 @media (min-width: 800px) {
@@ -803,17 +829,6 @@ button {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: repeat(4, 1fr);
   }
-}
-
-.container--widget {
-  padding: 1rem 2rem;
-  overflow-y: auto;
-  word-wrap: break-word;
-}
-
-.spinner {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

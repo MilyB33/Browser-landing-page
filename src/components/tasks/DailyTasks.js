@@ -23,7 +23,7 @@ const DailyTasks = () => {
   };
 
   return (
-    <section className="daily__tasks container--widget">
+    <section className="daily__tasks container--widget container--widget__background">
       <h1 className="header">Your Daily Tasks :</h1>
 
       <TasksForm onFormSubmit={onFormSubmit} />
