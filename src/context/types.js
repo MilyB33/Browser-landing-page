@@ -2,6 +2,7 @@ export const ADD_SERIES = 'ADD_SERIES';
 export const GET_SERIES = 'GET_SERIES';
 export const REMOVE_SERIES = 'REMOVE_SERIES';
 export const SEARCH_SERIES = 'SEARCH_SERIES';
+export const UPDATE_SERIES = 'UPDATE_SERIES';
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 export const SET_ERROR_SERIES = 'SET_ERROR_SERIES';
 export const ADD_TASK = 'ADD_TASK';

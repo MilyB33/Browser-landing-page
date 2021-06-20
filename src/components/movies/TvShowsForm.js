@@ -9,6 +9,7 @@ const TvShowsForm = ({ onSearch }) => {
   const onSubmit = (event) => {
     event.preventDefault();
     onSearch(text);
+    setText('');
   };
 
   return (

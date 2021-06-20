@@ -14,6 +14,7 @@ const TvShows = () => {
     getSeries,
     removeSeries,
     searchSeries,
+    updateSeries,
     clearSearch,
     error,
   } = seriesContext;
@@ -22,6 +23,12 @@ const TvShows = () => {
     getSeries();
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    if (series.length === 0) return;
+    updateSeries();
+    // eslint-disable-next-line
+  }, [series]);
 
   return (
     <section className="premieres container--widget container--widget__background">

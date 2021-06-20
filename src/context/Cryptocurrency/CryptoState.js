@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import CryptoContext from './cryptoContext';
 import CrytpoReducer from './cryptoReducer';
+import fetchCrypto from '../apis/crypto';
 import { GET_COINS, ACTUAL_COIN, SET_ERROR_COINS } from '../types';
 
 const CryptoState = (props) => {
@@ -11,18 +12,12 @@ const CryptoState = (props) => {
     error: false,
   };
 
-  const URL =
-    'https://api.coingecko.com/api/v3/coins/markets?vs_currency=pln&order=market_cap_desc&per_page=100&page=1&sparkline=false';
-
   const [state, dispatch] = useReducer(CrytpoReducer, initialState);
 
   const getCoins = async () => {
     try {
-      const res = await fetch(URL, {
-        method: 'GET',
-      });
-
-      const data = await res.json();
+      const response = await fetchCrypto.get();
+      const { data } = response;
 
       dispatch({
         type: GET_COINS,

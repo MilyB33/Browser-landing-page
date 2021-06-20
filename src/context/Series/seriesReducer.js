@@ -5,6 +5,7 @@ import {
   SEARCH_SERIES,
   CLEAR_SEARCH,
   SET_ERROR_SERIES,
+  UPDATE_SERIES,
 } from '../types';
 // eslint-disable-next-line
 export default (state, action) => {
@@ -13,6 +14,7 @@ export default (state, action) => {
       return {
         ...state,
         series: JSON.parse(localStorage.getItem('TvShows')) || [],
+        lastUpdate: localStorage.getItem('SeriesLastUpdate') || null,
       };
     case ADD_SERIES:
       localStorage.setItem(
@@ -56,6 +58,18 @@ export default (state, action) => {
       return {
         ...state,
         error: true,
+      };
+    case UPDATE_SERIES:
+      localStorage.setItem(
+        'SeriesLastUpdate',
+        new Date().toLocaleDateString()
+      );
+      return {
+        ...state,
+        series: state.series.map((tvShow) =>
+          tvShow.id === action.payload.id ? action.payload : tvShow
+        ),
+        lastUpdate: new Date().toLocaleDateString(),
       };
     default:
       return state;
