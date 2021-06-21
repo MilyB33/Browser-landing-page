@@ -4,7 +4,7 @@ import React, {
   useEffect,
   Fragment,
 } from 'react';
-import CryptoContext from '../../context/Cryptocurrency/cryptoContext';
+import CryptoContext from '../../context/cryptocurrency/cryptoContext';
 import Spinner from '../layout/Spinner';
 
 const Crypto = () => {

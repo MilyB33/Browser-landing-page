@@ -3,7 +3,7 @@ import TvShowsForm from './TvShowsForm';
 import TvShowsList from './TvShowsList';
 import SearchResults from './SearchResults';
 
-import SeriesContext from '../../context/Series/seriesContext';
+import SeriesContext from '../../context/series/seriesContext';
 
 const TvShows = () => {
   const seriesContext = useContext(SeriesContext);

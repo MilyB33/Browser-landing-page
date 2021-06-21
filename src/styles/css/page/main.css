@@ -135,7 +135,7 @@ button {
   padding: 1rem 2rem;
   overflow-y: auto;
   word-wrap: break-word;
-  margin: 10px;
+  margin: 5px;
 }
 .container--widget__background {
   background-color: rgba(71, 66, 66, 0.5);
@@ -823,7 +823,7 @@ button {
 }
 
 .container__grid {
-  width: 100%;
+  min-width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 15vh 45vh 30vh repeat(4, minmax(0vh, 50vh));
