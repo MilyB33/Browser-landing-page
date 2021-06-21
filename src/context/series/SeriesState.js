@@ -111,7 +111,7 @@ const SeriesState = (props) => {
     });
   };
 
-  const _fetchSeries = async (url, id, text, cacheV = true) => {
+  const _fetchSeries = async (url, id, text) => {
     const response = await fetchSeries.get(`/${url}${id || text}`);
     return response.data;
   };
