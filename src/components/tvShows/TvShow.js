@@ -4,13 +4,18 @@ import PropTypes from 'prop-types';
 
 import { FiDelete as DeleteIcon } from 'react-icons/all';
 
-const TvShow = ({ tvShow: { id, name, airDate }, removeSeries }) => {
+const TvShow = ({
+  tvShow: { id, name, airDate, url },
+  removeSeries,
+}) => {
   const ref = useRef(null);
 
   return (
     <tr className="tvShow__item" ref={ref}>
       <td>
-        <h4>{name}</h4>
+        <a href={url} name="tvShowLink">
+          <h4>{name}</h4>
+        </a>
       </td>
       <td>
         <h4>{airDate}</h4>

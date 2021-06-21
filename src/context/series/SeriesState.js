@@ -30,7 +30,7 @@ const SeriesState = (props) => {
     try {
       const data = await _fetchSeries('show-details?q=', id);
 
-      const { name, url, countdown } = data.tvShow;
+      const { name, url, countdown, status } = data.tvShow;
 
       if (state.series.some((tvShow) => tvShow.id === id)) {
         return;
@@ -41,9 +41,10 @@ const SeriesState = (props) => {
         payload: {
           id,
           name,
-          airDate: countdown
-            ? countdown.air_date.slice(0, 10)
-            : 'Ended or Unknown', // temporary slice
+          airDate:
+            status === 'Ended' || status === 'Canceled'
+              ? status
+              : countdown?.air_date.slice(0, 10) || 'Unknown', // temporary slice
           url,
         },
       });
