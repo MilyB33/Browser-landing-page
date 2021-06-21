@@ -83,18 +83,24 @@ const SeriesState = (props) => {
 
     state.series.forEach(async ({ id }) => {
       try {
-        const data = await _fetchSeries('show-details?q=', id);
+        const data = await _fetchSeries(
+          'show-details?q=',
+          id,
+          null,
+          false
+        );
 
-        const { name, url, countdown } = data.tvShow;
+        const { name, url, countdown, status } = data.tvShow;
 
         dispatch({
           type: UPDATE_SERIES,
           payload: {
             id,
             name,
-            airDate: countdown
-              ? countdown.air_date.slice(0, 10)
-              : 'Ended or Unknown', // temporary slice
+            airDate:
+              status === 'Ended' || status === 'Canceled'
+                ? status
+                : countdown?.air_date.slice(0, 10) || 'Unknown', // temporary slice
             url,
           },
         });
@@ -105,7 +111,7 @@ const SeriesState = (props) => {
     });
   };
 
-  const _fetchSeries = async (url, id, text) => {
+  const _fetchSeries = async (url, id, text, cacheV = true) => {
     const response = await fetchSeries.get(`/${url}${id || text}`);
     return response.data;
   };
