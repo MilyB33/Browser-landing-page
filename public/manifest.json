@@ -1,6 +1,7 @@
 {
   "short_name": "Landing page",
   "name": "Browser Landing Page",
+  "desciption": "This is a simple Browser Landing Page",
   "icons": [
     {
       "src": "favicon.ico",

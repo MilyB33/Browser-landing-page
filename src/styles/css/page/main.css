@@ -242,7 +242,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background: rgba(24, 90, 219, 0.3);
+  background: rgba(52, 49, 49, 0.5);
   padding: 1rem;
   transition: 0.3s;
 }
