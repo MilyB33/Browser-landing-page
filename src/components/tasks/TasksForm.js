@@ -11,7 +11,8 @@ const TasksForm = ({ onFormSubmit }) => {
 
   const { title, time } = task;
 
-  const onInputChange = (event) => setTask({ ...task, [event.target.name]: event.target.value });
+  const onInputChange = (event) =>
+    setTask({ ...task, [event.target.name]: event.target.value });
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -33,6 +34,7 @@ const TasksForm = ({ onFormSubmit }) => {
           onChange={onInputChange}
           value={title}
           required
+          autoComplete="off"
         />
         <input
           type="time"
@@ -42,7 +44,11 @@ const TasksForm = ({ onFormSubmit }) => {
           value={time}
           required
         />
-        <button className="input__task__btn btn--icon" name="add-task" title="Add Task">
+        <button
+          className="input__task__btn btn--icon"
+          name="add-task"
+          title="Add Task"
+        >
           <AddIcon />
         </button>
       </div>
