@@ -36,7 +36,7 @@ const Bookmarks = () => {
 
   return (
     <SubMenus onSubmit={onFormSubmit}>
-      <h1>Bookmarks</h1>
+      <h1>Bookmarks :</h1>
 
       <label className="bookmark__label" htmlFor="url">
         URL
@@ -62,12 +62,19 @@ const Bookmarks = () => {
         required
       />
 
-      <button className="bookmarks__submit btn--default" name="add-site" title="Add Site">
+      <button
+        className="bookmarks__submit btn--default"
+        name="add-site"
+        title="Add Site"
+      >
         Add Site
       </button>
 
       <h2>Your bookmarks: </h2>
-      <BookmarksList bookmarks={navigationContext.bookmarks} onDelete={onDelete} />
+      <BookmarksList
+        bookmarks={navigationContext.bookmarks}
+        onDelete={onDelete}
+      />
     </SubMenus>
   );
 };

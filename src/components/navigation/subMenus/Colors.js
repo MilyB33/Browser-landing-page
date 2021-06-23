@@ -17,8 +17,9 @@ const Colors = () => {
 
   return (
     <SubMenus>
+      <h1>Colors :</h1>
       <Color
-        text="Change Text Color"
+        text="Change Main Text Color"
         type="color"
         name="fontColor"
         onToggle={toggleColor}

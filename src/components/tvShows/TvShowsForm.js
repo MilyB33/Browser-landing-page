@@ -23,6 +23,7 @@ const TvShowsForm = ({ onSearch }) => {
           value={text}
           onChange={(event) => setText(event.target.value)}
           required
+          autoComplete="off"
         />
         <button
           className="input__tvShow__submit btn--icon"
