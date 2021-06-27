@@ -26,12 +26,22 @@
 .input__task__title {
   flex-grow: 2;
   padding: 0.5rem;
+  width: 100%;
+
+  @media (min-width: 1700px) {
+    width: initial;
+  }
 }
 
 .input__task__time {
   flex-grow: 2;
   text-align: center;
   padding: 0.5rem;
+  width: 40%;
+
+  @media (min-width: 1700px) {
+    width: initial;
+  }
 }
 
 .input__task__btn {

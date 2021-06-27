@@ -17,11 +17,23 @@ const LikedSites = () => {
     variableWidth: false,
   };
 
+  // This is for the sites which not provided easy path to favicon
+  const onError = (event) => {
+    event.target.onError = null;
+    event.target.src =
+      'https://pensive-payne-d85f31.netlify.app/favicon.ico';
+  };
+
   const renderedBookmarks = bookmarks.map(
     ({ id, url, icon, name }) => {
       return (
         <a key={id} href={url} className="sites__item" title={name}>
-          <img src={icon} alt="site icon" className="sites__icon" />
+          <img
+            src={icon}
+            alt="site icon"
+            className="sites__icon"
+            onError={onError}
+          />
           <p>{name}</p>
         </a>
       );
