@@ -22,12 +22,13 @@ button {
   background: none;
   color: #fff;
   font-size: 1.5rem;
+  transition: 0.5s;
 }
 input:focus,
 textarea:focus,
 select:focus,
 button:focus {
-  box-shadow: inset 0 0 4px 4px #dad4d4;
+  background: rgba(52, 49, 49, 0.3);
 }
 
 input::placeholder {
@@ -182,7 +183,7 @@ button {
   width: 100%;
   border-bottom: 0.3rem solid #fff;
   min-width: 80%;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
 }
 
 .socials {
@@ -484,12 +485,24 @@ button {
 .input__task__title {
   flex-grow: 2;
   padding: 0.5rem;
+  width: 100%;
+}
+@media (min-width: 1700px) {
+  .input__task__title {
+    width: initial;
+  }
 }
 
 .input__task__time {
   flex-grow: 2;
   text-align: center;
   padding: 0.5rem;
+  width: 40%;
+}
+@media (min-width: 1700px) {
+  .input__task__time {
+    width: initial;
+  }
 }
 
 .input__task__btn {

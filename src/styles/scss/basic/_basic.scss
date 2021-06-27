@@ -25,9 +25,10 @@ button {
   background: none;
   color: $clr-light-100;
   font-size: 1.5rem;
+  transition: 0.5s;
 
   &:focus {
-    box-shadow: inset 0 0 4px 4px $clr-light-200;
+    background: rgba($clr-dark-100, 0.3);
   }
 }
 
