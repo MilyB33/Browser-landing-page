@@ -1,3 +1,19 @@
+# Browser Landing Page
+
+## `Live demo`
+
+Click here to go to [live demo](https://pensive-payne-d85f31.netlify.app)
+
+## `Used Apis`
+
+Cryptocurrency: [CoinGecko API](https://www.coingecko.com/pl/api)
+TV Shows: [EpisoDate API](https://www.episodate.com/api)
+Temperature/Weather: [7time API](http://www.7timer.info/doc.php)
+
+## `Info`
+
+To edit note double click.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
