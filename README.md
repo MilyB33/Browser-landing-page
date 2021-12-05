@@ -1,5 +1,10 @@
 # Browser Landing Page
 
+## `About`
+
+My First project using React. On site you can search through web like in google, save bookmarks, add notes or track release date of your favourite serial.
+All informations are store in local storage. Site is customizible so you can switch off/on features.
+
 ## `Live demo`
 
 Click here to go to [live demo](https://pensive-payne-d85f31.netlify.app)
@@ -13,6 +18,13 @@ Temperature/Weather: [7time API](http://www.7timer.info/doc.php)
 ## `Info`
 
 To edit note double click.
+
+## `Used Technologies`
+
+._ Javascript
+._ ReactJS
+._ CSS
+._ SCSS
 
 # Getting Started with Create React App
 
