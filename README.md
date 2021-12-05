@@ -21,10 +21,10 @@ To edit note double click.
 
 ## `Used Technologies`
 
-._ Javascript
-._ ReactJS
-._ CSS
-._ SCSS
+- Javascript
+- ReactJS
+- CSS
+- SCSS
 
 # Getting Started with Create React App
 
